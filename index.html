@@ -1,110 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>miu_Digital | Architectural Systems</title>
+    <title>miu_Digital | Proton Architecture</title>
     <style>
-        /* Professional Dark Mode Aesthetic */
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background-color: #121212; 
-            color: #e0e0e0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        .container {
-            background: #1e1e1e;
-            border-top: 4px solid #00d4ff;
-            padding: 30px;
-            width: 90%;
-            max-width: 500px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-            text-align: center;
-            border-radius: 8px;
-        }
-        h1 { letter-spacing: 3px; text-transform: uppercase; margin-bottom: 5px; color: #fff; }
-        .subtitle { color: #00d4ff; font-size: 0.9em; margin-bottom: 25px; display: block; }
-        
-        /* The Security Vault Styling */
-        #vault-room {
-            display: none; /* Hidden by default */
-            background: #000;
-            border: 1px solid #ff4444;
-            padding: 15px;
-            margin-top: 20px;
-            font-family: 'Courier New', monospace;
-            color: #ff4444;
-            text-align: left;
-            font-size: 0.85em;
-        }
-
-        .btn-group { margin-top: 25px; }
-
-        button {
-            background: transparent;
-            border: 1px solid #00d4ff;
-            color: #00d4ff;
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin: 5px;
-            font-size: 0.8em;
-            text-transform: uppercase;
-        }
-        button:hover { background: #00d4ff; color: #121212; }
-        
-        .vault-btn { border-color: #ff4444; color: #ff4444; }
-        .vault-btn:hover { background: #ff4444; color: #fff; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #0f172a; color: #f8fafc; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { text-align: center; border-left: 2px solid #a855f7; padding-left: 20px; }
+        h1 { font-weight: 300; letter-spacing: 2px; margin-bottom: 0; color: #f8fafc; }
+        span.highlight { color: #a855f7; font-weight: 600; }
+        p { color: #94a3b8; font-size: 0.9rem; margin-top: 5px; }
+        .status { color: #a855f7; font-size: 0.8rem; margin-top: 20px; font-style: italic; opacity: 0.8; }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <header>
-            <h1>miu_Digital</h1>
-            <span class="subtitle">Architectural Systems & Security</span>
-        </header>
-
-        <main>
-            <p>Welcome, Architect. System is currently in standby mode.</p>
-            
-            <div id="vault-room">
-                <strong>[ SECURE VAULT ACCESS GRANTED ]</strong><br>
-                > Encrypted via Proton Bridge<br>
-                > W3C Validation: PASSED (Green)<br>
-                > Global Status: Independent
-            </div>
-
-            <div class="btn-group">
-                <button onclick="runDiagnostic()">Run Diagnostic</button>
-                <button class="vault-btn" onclick="unlockVault()">Access Vault</button>
-            </div>
-        </main>
+        <h1>miu_<span class="highlight">Proton</span></h1>
+        <p>Digital Architecture & System Security</p>
+        <div class="status">// Proton Landing Active. System Integrity Verified.</div>
     </div>
-
-    <script>
-        function runDiagnostic() {
-            alert("System Diagnostic: All architectural bricks are secure. W3C Standards met.");
-        }
-
-        function unlockVault() {
-            // Your custom security key
-            let key = prompt("Enter Architect Security Key:");
-            
-            if (key === "miu2026") {
-                document.getElementById('vault-room').style.display = 'block';
-                alert("Security Cleared. Vault is now visible.");
-            } else {
-                alert("Access Denied. Security Protocol Active.");
-            }
-        }
-    </script>
-
 </body>
 </html>
-"viewport" content="width=device-wid
