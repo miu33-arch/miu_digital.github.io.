@@ -3,43 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>miu_Proton | Digital Architect</title>
+    <title>miu_Proton | System Console</title>
     <style>
-        body { 
-            background-color: #020617; 
-            background-image: radial-gradient(#1e293b 1px, transparent 1px);
-            background-size: 40px 40px;
-            color: #f8fafc; 
-            font-family: 'Segoe UI', sans-serif;
-            display: flex; justify-content: center; align-items: center; 
-            height: 100vh; margin: 0; overflow: hidden;
-        }
-        .card {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(168, 85, 247, 0.3);
-            padding: 3rem;
-            border-radius: 2px;
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.1);
-            text-align: center;
-            position: relative;
-        }
-        .card::before {
-            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, #a855f7, transparent);
-        }
-        h1 { font-weight: 200; letter-spacing: 6px; text-transform: uppercase; margin: 0; font-size: 1.8rem; }
-        span { color: #a855f7; font-weight: 700; }
-        p { color: #64748b; letter-spacing: 1px; font-size: 0.8rem; margin-top: 10px; text-transform: uppercase; }
-        .line { width: 40px; height: 1px; background: #a855f7; margin: 20px auto; }
+        :root { --accent: #a855f7; --bg: #020617; --panel: #0f172a; --text: #f8fafc; --dim: #64748b; }
+        body { background: var(--bg); color: var(--text); font-family: 'Courier New', monospace; margin: 0; display: flex; height: 100vh; overflow: hidden; }
+        
+        nav { width: 240px; background: var(--panel); border-right: 1px solid rgba(168, 85, 247, 0.2); padding: 30px; display: flex; flex-direction: column; }
+        .logo { font-weight: bold; color: var(--accent); margin-bottom: 50px; border-left: 3px solid var(--accent); padding-left: 15px; letter-spacing: 2px; }
+        nav a { color: var(--dim); text-decoration: none; margin-bottom: 25px; font-size: 0.8rem; transition: 0.3s; }
+        nav a:hover { color: var(--accent); transform: translateX(5px); }
+
+        main { flex-grow: 1; padding: 40px; display: grid; grid-template-columns: 1fr 350px; gap: 40px; align-items: center; position: relative; }
+        .status-bar { position: absolute; top: 0; left: 0; width: 100%; padding: 15px 30px; font-size: 0.7rem; color: var(--accent); border-bottom: 1px solid rgba(168, 85, 247, 0.1); display: flex; justify-content: space-between; box-sizing: border-box; }
+        
+        .hero h1 { font-size: 2.8rem; font-weight: 200; margin: 0; letter-spacing: 4px; }
+        .hero h1 b { color: var(--accent); font-weight: 800; }
+        .hero p { color: var(--dim); line-height: 1.8; margin-top: 20px; font-size: 0.9rem; }
+        
+        /* The System Log Area */
+        .system-log { background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(168, 85, 247, 0.1); padding: 20px; height: 400px; font-size: 0.75rem; overflow: hidden; position: relative; }
+        .log-header { color: var(--accent); border-bottom: 1px solid rgba(168, 85, 247, 0.1); padding-bottom: 10px; margin-bottom: 15px; font-weight: bold; }
+        .log-entry { margin-bottom: 10px; color: var(--dim); }
+        .log-entry span { color: var(--accent); margin-right: 8px; }
+
+        .btn-core { margin-top: 30px; padding: 12px 20px; border: 1px solid var(--accent); background: transparent; color: var(--accent); cursor: pointer; font-family: inherit; transition: 0.3s; font-size: 0.75rem; }
+        .btn-core:hover { background: var(--accent); color: var(--bg); box-shadow: 0 0 15px rgba(168, 85, 247, 0.3); }
+        .grid { position: absolute; inset: 0; background-image: radial-gradient(rgba(168, 85, 247, 0.05) 1px, transparent 1px); background-size: 30px 30px; z-index: -1; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>miu_<span>Proton</span></h1>
-        <p>Architectural Systems & Security</p>
-        <div class="line"></div>
-        <p style="font-size: 0.6rem; color: #a855f7; opacity: 0.6;">// Integrity Verified</p>
+    <div class="grid"></div>
+    <div class="status-bar">
+        <span>DOMAIN: miu33-arch.github.io</span>
+        <span>AUTH: MIU_DIGITAL // ARCHITECT</span>
     </div>
+    <nav>
+        <div class="logo">MIU_PROTON</div>
+        <a href="#">[01] CONSOLE_HOME</a>
+        <a href="#">[02] SECURITY_VAULT</a>
+        <a href="#">[03] SYSTEM_LOGS</a>
+        <a href="https://github.com/miu33-arch">[04] GITHUB_ROOT</a>
+    </nav>
+    <main>
+        <div class="hero">
+            <h1>MIU_<b>PROTON</b></h1>
+            <p>Independent Digital Architect. Specialized in System Security, Information Infrastructure, and Architectural Logic. Building secure digital futures without external reliance.</p>
+            <button class="btn-core" onclick="window.location.href='https://github.com/miu33-arch'">ACCESS REPOSITORY</button>
+        </div>
+        <div class="system-log">
+            <div class="log-header">LIVE_SYSTEM_LOGS</div>
+            <div class="log-entry"><span>[FEB 20]</span> Repository renamed to miu33-arch.github.io</div>
+            <div class="log-entry"><span>[FEB 20]</span> Deployment of Proton Landing Architecture</div>
+            <div class="log-entry"><span>[FEB 20]</span> Security Integrity Check: PASSED</div>
+            <div class="log-entry"><span>[FEB 20]</span> User Profile: miu_Digital Architect verified</div>
+            <div class="log-entry"><span>[SYS]</span> Awaiting next architectural command...</div>
+        </div>
+    </main>
 </body>
 </html>
