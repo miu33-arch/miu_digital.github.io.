@@ -2,25 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CONTACT | MIU_PROTON</title>
+    <title>CONTACT_GATE | MIU_PROTON</title>
     <style>
-        body { background: #050505; color: white; font-family: 'Courier New', monospace; display: flex; height: 100vh; margin: 0; }
-        nav { width: 280px; border-right: 1px solid #1a1a1a; padding: 50px 30px; display: flex; flex-direction: column; gap: 25px; }
-        nav a { color: #555; text-decoration: none; font-size: 0.85rem; }
-        main { flex: 1; padding: 100px; display: flex; flex-direction: column; justify-content: center; }
+        :root { --neon: #a855f7; --bg: #0b0c10; }
+        body { background: var(--bg); color: #c0caf5; font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; margin: 0; }
+        nav { width: 250px; border-right: 1px solid #24283b; padding: 40px 20px; display: flex; flex-direction: column; gap: 15px; background: #16161e; }
+        nav a { color: #565f89; text-decoration: none; font-size: 0.8rem; padding: 10px; }
+        nav a:hover, .active { color: var(--neon); background: #24283b; }
+        main { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .contact-box { border: 1px solid var(--neon); padding: 40px; background: #16161e; max-width: 500px; }
+        h1 { font-size: 2rem; letter-spacing: 4px; color: #fff; margin-bottom: 10px; }
+        .email { color: #9aa5ce; margin-bottom: 30px; font-family: 'Courier New', monospace; }
+        .btn { border: 1px solid var(--neon); color: var(--neon); padding: 15px 30px; text-decoration: none; transition: 0.3s; font-size: 0.8rem; letter-spacing: 2px; }
+        .btn:hover { background: var(--neon); color: #fff; }
     </style>
 </head>
 <body>
     <nav>
-        <div style="color:white; font-weight:900; margin-bottom:40px;">MIU_PROTON</div>
-        <a href="index.html">[01] CONSOLE_HOME</a>
+        <div style="font-size: 0.7rem; color: #565f89; margin-bottom: 20px;">UPLINK_STATUS_V1.0</div>
+        <a href="index.html">[01] CORE_IDENTITY</a>
         <a href="vault.html">[02] SECURITY_VAULT</a>
-        <a href="contact.html" style="color:#a855f7;">[03] CONTACT_GATE</a>
+        <a href="contact.html" class="active">[03] CONTACT_GATE</a>
     </nav>
     <main>
-        <h1>CONTACT_GATE</h1>
-        <p>Uplink: miu.digital.studio@proton.me</p>
-        <a href="mailto:miu.digital.studio@proton.me" style="color:#a855f7; border: 1px solid #a855f7; padding: 15px; text-decoration: none;">INITIATE_COMMUNICATION</a>
+        <div class="contact-box">
+            <h1>CONTACT_GATE</h1>
+            <p class="email">// Encrypted Uplink: miu.digital.studio@proton.me</p>
+            <a href="mailto:miu.digital.studio@proton.me" class="btn">INITIATE_UPLINK</a>
+        </div>
     </main>
 </body>
 </html>
