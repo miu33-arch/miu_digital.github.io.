@@ -28,13 +28,34 @@
 </nav>
 
     <main>
-        <div class="contact-box">
-            <div class="gate-status">// SECURE_COMMUNICATION_CHANNEL_OPEN</div>
-            <h1>CONTACT_<b>GATE</b></h1>
-            <p style="color: var(--dim); font-size: 0.9rem; margin-bottom: 30px;">Direct uplink for architectural consultations and security inquiries.</p>
-            <a href="mailto:miu.digital.studio@proton.me" class="btn-mail">INITIALIZE MESSAGE</a>
-            <p style="margin-top: 30px; font-size: 0.7rem; color: var(--dim);">PGP_ENCRYPTION: SUPPORTED</p>
-        </div>
-    </main>
+    <div class="contact-box">
+        <div class="gate-status">// SECURE_COMMUNICATION_CHANNEL_OPEN</div>
+        <h1 style="color: var(--accent); margin-bottom: 20px;">CONTACT_GATE</h1>
+        
+        <form action="#" style="display: flex; flex-direction: column; gap: 15px; width: 100%; text-align: left;">
+            <input type="text" placeholder="CLIENT_NAME" style="padding: 10px; background: #0f172a; border: 1px solid rgba(168,85,247,0.3); color: white; font-family: 'Courier New', monospace;">
+            
+            <select style="padding: 10px; background: #0f172a; border: 1px solid rgba(168,85,247,0.3); color: var(--dim); font-family: inherit;">
+                <option>SELECT_INQUIRY_TYPE</option>
+                <option>ARCHITECTURAL_BLUEPRINTS</option>
+                <option>INTERIOR_STAGING</option>
+                <option value="vault">VAULT_ACCESS_REQUEST</option>
+            </select>
+
+            <div style="display: flex; align-items: center; gap: 10px; padding: 10px; border: 1px dashed var(--accent); background: rgba(168, 85, 247, 0.05);">
+                <input type="checkbox" id="vault-access" style="cursor: pointer;">
+                <label for="vault-access" style="font-size: 0.7rem; color: var(--accent);">REQUEST_SECURITY_VAULT_KEY (miu2026)</label>
+            </div>
+
+            <textarea placeholder="PROJECT_SCOPE" rows="4" style="padding: 10px; background: #0f172a; border: 1px solid rgba(168,85,247,0.3); color: white; font-family: inherit;"></textarea>
+            
+            <button type="submit" class="btn-mail" style="border: none; cursor: pointer; width: 100%;">SEND_ENCRYPTED_MESSAGE</button>
+        <form action="mailto:miu.digital.studio@proton.me" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: 15px; width: 100%; text-align: left;">
+
+
+        <p style="margin-top: 20px; font-size: 0.7rem; color: var(--dim);">PGP_ENCRYPTION: SUPPORTED</p>
+    </div>
+</main>
+
 </body>
 </html>
