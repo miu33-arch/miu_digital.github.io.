@@ -3,108 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIU_PROTON | 缪联睿</title>
+    <title>miu_Proton | Console</title>
     <style>
-        :root { --primary: #a855f7; --bg: #030712; --text: #f8fafc; --accent: #6366f1; --glow: rgba(168, 85, 247, 0.4); }
+        :root { --primary: #a855f7; --bg: #030712; --text: #f8fafc; --accent: #6366f1; --dim: #64748b; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', monospace; }
         body { background-color: var(--bg); color: var(--text); display: flex; min-height: 100vh; overflow-x: hidden; }
 
-        nav { width: 280px; background: rgba(15, 23, 42, 0.95); border-right: 1px solid rgba(168, 85, 247, 0.2); padding: 40px 20px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 15px; z-index: 100; }
-        .nav-item { color: var(--text); text-decoration: none; padding: 12px; border: 1px solid transparent; transition: 0.3s; font-size: 0.85rem; }
-        .nav-item:hover { border-color: var(--primary); background: rgba(168, 85, 247, 0.1); color: var(--primary); }
+        /* Sidebar Navigation with Active Glow */
+        nav { 
+            width: 260px; background: rgba(15, 23, 42, 0.95); border-right: 1px solid rgba(168, 85, 247, 0.2); 
+            padding: 40px 20px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; 
+        }
+        .logo { font-weight: bold; color: var(--primary); margin-bottom: 50px; border-left: 3px solid var(--primary); padding-left: 15px; }
+        nav a { color: var(--dim); text-decoration: none; margin-bottom: 25px; font-size: 0.8rem; transition: 0.3s; display: block; }
+        nav a:hover, nav a.active { color: var(--primary); text-shadow: 0 0 10px var(--primary); transform: translateX(5px); }
 
-        main { flex: 1; padding: 60px; max-width: 1000px; scroll-behavior: smooth; }
-        .section { margin-bottom: 120px; }
-        h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 5px; }
-        .pinyin { font-size: 1.1rem; color: var(--accent); margin-bottom: 30px; letter-spacing: 2px; }
-        h2 { color: var(--primary); margin-bottom: 25px; font-size: 1.4rem; border-left: 3px solid var(--primary); padding-left: 15px; }
+        /* Console Main Content */
+        main { flex: 1; padding: 60px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+        .hero-title { font-size: 2.5rem; margin-bottom: 20px; color: var(--text); }
+        .manifesto-box { border-left: 1px solid var(--primary); padding-left: 30px; max-width: 650px; }
+        .manifesto-box p { font-size: 0.95rem; line-height: 1.8; color: var(--dim); margin-bottom: 20px; }
+        
+        /* Interactive Status Bar */
+        .status-bar { display: flex; gap: 20px; margin-top: 40px; font-size: 0.7rem; color: var(--primary); }
+        .blink { animation: blinker 1.5s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { padding: 25px; background: #0f172a; border: 1px solid rgba(168, 85, 247, 0.2); transition: 0.3s; }
-        .card:hover { border-color: var(--primary); box-shadow: 0 0 10px var(--glow); }
-        .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1rem; }
-
-        /* The Blueprint Placeholder */
-        .blueprint-img { width: 100%; height: 180px; background: repeating-linear-gradient(45deg, #1e293b, #1e293b 1px, #0f172a 1px, #0f172a 20px); border: 1px solid var(--primary); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; position: relative; }
-        .blueprint-img::after { content: "TOP_SECRET_ASSET"; font-size: 0.6rem; color: var(--primary); opacity: 0.5; }
-
-        .manifesto-box { border: 1px dashed var(--accent); padding: 30px; background: rgba(99, 102, 241, 0.05); margin-bottom: 50px; }
-
-        .log-container { background: #020617; border: 1px solid var(--primary); padding: 25px; box-shadow: 0 0 15px var(--glow); }
-        .log-header { color: var(--primary); font-weight: bold; margin-bottom: 15px; font-size: 0.8rem; border-bottom: 1px solid #1e293b; padding-bottom: 10px; }
-        .log-entry { font-size: 0.8rem; margin-bottom: 8px; color: #94a3b8; }
-        .log-entry span { color: var(--primary); margin-right: 10px; }
-
+        /* Mobile Optimization */
         @media (max-width: 768px) {
-            body { flex-direction: column; overflow-y: auto !important; }
-            nav { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid #1e293b; padding: 20px; }
-            main { padding: 30px 20px; }
+            body { flex-direction: column; }
+            nav { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid rgba(168, 85, 247, 0.2); padding: 20px; }
+            main { padding: 40px 20px; }
+            .hero-title { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div style="font-weight: bold; color: var(--primary); margin-bottom: 10px; font-size: 0.9rem;">STUDIO_MIU_V1.0</div>
-        <a href="index.html" class="nav-item"><span>[01]</span> CORE_IDENTITY</a>
-        <a href="vault.html" class="nav-item"><span>[02]</span> SECURITY_VAULT</a>
-        <a href="#services" class="nav-item"><span>[03]</span> DESIGN_STUDIO</a>
-        <a href="#logs" class="nav-item"><span>[04]</span> SYSTEM_LOGS</a>
-        <a href="contact.html" class="nav-item"><span>[05]</span> CONTACT_GATE</a>
+        <div class="logo">MIU_PROTON</div>
+        <a href="index.html" class="active">[01] CONSOLE_HOME</a>
+        <a href="vault.html">[02] SECURITY_VAULT</a>
+        <a href="contact.html">[03] CONTACT_GATE</a>
     </nav>
 
     <main>
-        <section class="section" id="identity">
-            <h1>MIU LIAN RUI | 缪联睿</h1>
-            <div class="pinyin">Miù Lián Ruì</div>
-            <p>Independent Digital Architect. Specialized in Cyber-Industrial physical habitats and secure digital infrastructure.</p>
-        </section>
-
-        <section class="section">
-            <h2>INDEPENDENCE_MANIFESTO</h2>
-            <div class="manifesto-box">
-                <p style="color: var(--text); font-style: italic; margin-bottom: 15px;">
-                    "Studio Miu operates on the logic of self-reliance. Without external support systems, we build our own foundations—digitally, physically, and professionally" [cite: 2026-02-15].
-                </p>
-                <p style="font-size: 0.8rem; color: var(--accent);">
-                    > STATUS: AUTONOMOUS_STATION_ONLINE
-                </p>
+        <div class="manifesto-box">
+            <h1 class="hero-title">MIU_DIGITAL_STUDIO</h1>
+            <p>
+                Operating at the intersection of digital logic and physical form. 
+                Founded by <strong>Miù Lián Ruì (缪联睿)</strong>, this studio specializes in 
+                Cyber-Industrial Architectural layouts and proprietary habitat staging [cite: 2026-02-15].
+            </p>
+            <p>
+                As an independent practice, we prioritize security, precision, and client confidentiality 
+                above all else. Access the <strong>SECURITY_VAULT</strong> for manifest details.
+            </p>
+            
+            <div class="status-bar">
+                <span>SYSTEM: ONLINE</span>
+                <span>|</span>
+                <span class="blink">UP-LINK: ACTIVE</span>
+                <span>|</span>
+                <span>LOC: REMOTE_TERMINAL</span>
             </div>
-        </section>
-
-        <section id="services" class="section">
-    <h2>STUDIO_FUNCTIONS</h2>
-    <div class="grid">
-        <a href="vault.html" style="text-decoration: none; color: inherit;">
-            <div class="card">
-                <div class="blueprint-img"></div>
-                <h3>[01] DIGITAL_BLUEPRINTS</h3>
-                <p>Precise floor plan optimization for minimalist workspaces. Tap to view encrypted samples.</p>
-                <div style="font-size: 0.7rem; color: var(--primary); margin-top: 10px;">> ACCESS_VAULT_REQUIRED</div>
-            </div>
-        </a>
-
-        <a href="vault.html" style="text-decoration: none; color: inherit;">
-            <div class="card">
-                <div class="blueprint-img"></div>
-                <h3>[02] HABITAT_STAGING</h3>
-                <p>Virtual interior rendering to transform raw rooms into high-tech habitats. Tap to decrypt portfolio.</p>
-                <div style="font-size: 0.7rem; color: var(--primary); margin-top: 10px;">> ACCESS_VAULT_REQUIRED</div>
-            </div>
-        </a>
-    </div>
-</section>
-
-
-        <section id="logs" class="section">
-            <div class="log-container">
-                <div class="log-header">LIVE_SYSTEM_LOGS</div>
-                <div class="log-entry"><span>[SYS]</span> IDENTITY: 缪联睿 // VERIFIED</div>
-                <div class="log-entry"><span>[SYS]</span> MANIFESTO: INDEPENDENCE_LOGIC_LOADED [cite: 2026-02-15]</div>
-                <div class="log-entry"><span>[SYS]</span> MODULE: DESIGN_STUDIO_EXPANDED</div>
-                <div class="log-entry"><span>[SYS]</span> SECURITY: VAULT_KEY_MIU2026_READY</div>
-            </div>
-        </section>
+        </div>
     </main>
+
 </body>
 </html>
