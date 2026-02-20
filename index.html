@@ -3,100 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SECURE_VAULT | 缪联睿</title>
+    <title>MIU_PROTON | 缪联睿</title>
     <style>
-        :root {
-            --primary: #a855f7;
-            --bg: #030712;
-            --text: #f8fafc;
-        }
+        :root { --primary: #a855f7; --bg: #030712; --text: #f8fafc; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', monospace; }
+        body { background-color: var(--bg); color: var(--text); display: flex; min-height: 100vh; overflow-x: hidden; }
 
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Courier New', monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
+        /* Sidebar */
+        nav { width: 300px; background: rgba(15, 23, 42, 0.9); border-right: 1px solid rgba(168, 85, 247, 0.2); padding: 40px 20px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 15px; }
+        .nav-item { color: var(--text); text-decoration: none; padding: 12px; border: 1px solid transparent; transition: 0.3s; }
+        .nav-item:hover { border-color: var(--primary); background: rgba(168, 85, 247, 0.1); color: var(--primary); }
 
-        /* Content starts hidden */
-        #vault-content {
-            display: none;
-            padding: 40px;
-            max-width: 800px;
-            width: 100%;
-            overflow-y: auto;
-            height: 100vh;
-        }
+        /* Main Content */
+        main { flex: 1; padding: 60px; max-width: 1000px; }
+        .section { margin-bottom: 60px; }
+        h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 5px; }
+        .pinyin { font-size: 1.2rem; color: #6366f1; margin-bottom: 30px; letter-spacing: 2px; }
+        p { line-height: 1.6; color: #94a3b8; margin-bottom: 20px; }
 
-        .vault-header {
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
+        /* Philosophy & Services */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { padding: 20px; background: #0f172a; border: 1px solid #1e293b; }
+        .card h3 { color: var(--primary); margin-bottom: 10px; font-size: 1rem; }
 
-        h1 { color: var(--primary); letter-spacing: 4px; }
-        
-        .asset-card {
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
+        /* Logs */
+        .log-container { background: #0f172a; border: 1px solid #1e293b; padding: 20px; margin-top: 40px; }
+        .log-header { color: var(--primary); font-weight: bold; margin-bottom: 15px; }
+        .log-entry { font-size: 0.85rem; margin-bottom: 8px; color: #64748b; }
+        .log-entry span { color: var(--primary); margin-right: 10px; }
 
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 0.8rem;
+        /* THE MOBILE SLIDE FIX */
+        @media (max-width: 768px) {
+            body { flex-direction: column; overflow-y: auto !important; }
+            nav { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid #1e293b; }
+            main { padding: 25px; }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div style="font-weight: bold; color: var(--primary); margin-bottom: 10px;">MIU_PROTON</div>
+        <a href="index.html" class="nav-item">[01] CONSOLE_HOME</a>
+        <a href="vault.html" class="nav-item">[02] SECURITY_VAULT</a>
+        <a href="#services" class="nav-item">[03] DESIGN_STUDIO</a>
+        <a href="contact.html" class="nav-item">[04] CONTACT_GATE</a>
+    </nav>
+    <main>
+        <section class="section">
+            <h1>MIU LIAN RUI | 缪联睿</h1>
+            <div class="pinyin">Miù Lián Ruì</div>
+            <p>Independent Digital Architect. Specialized in System Security, Information Infrastructure, and Architectural Logic. Building secure digital futures without external reliance.</p>
+        </section>
 
-    <div id="vault-content">
-        <div class="vault-header">
-            <h1>SECURITY_VAULT_DECRYPTED</h1>
-            <p>Welcome, Architect. Accessing proprietary design assets.</p>
+        <section id="services" class="section">
+            <h2 style="margin-bottom: 20px; color: var(--primary);">STUDIO_FUNCTIONS</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>VISION_LOGIC</h3>
+                    <p>Creating sanctuaries for autonomy. Clean code. Raw materials. Function over decoration.</p>
+                </div>
+                <div class="card">
+                    <h3>INTERIOR_ARCH</h3>
+                    <p>Cyber-Industrial layout optimization. Turning digital aesthetic into physical habitat.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="log-container">
+            <div class="log-header">LIVE_SYSTEM_LOGS</div>
+            <div class="log-entry"><span>[SYS]</span> IDENTITY_VERIFIED: MIU LIAN RUI</div>
+            <div class="log-entry"><span>[SYS]</span> MOBILE_UI: RESPONSIVE_SLIDE_ACTIVE</div>
+            <div class="log-entry"><span>[SYS]</span> Awaiting next architectural command...</div>
         </div>
-
-        <div class="asset-card">
-            <h3>[FILE] PROJECT_CYBER_HABITAT_V1</h3>
-            <p>> Lighting Scripts: RGBIC_NEON_CORE</p>
-            <p>> Material Specs: CONCRETE_STEEL_GLASS</p>
-        </div>
-
-        <div class="asset-card">
-            <h3>[FILE] CHINESE_ARCHITECTURAL_LOGIC</h3>
-            <p>> Traditional Principles x Cybernetic Execution</p>
-        </div>
-
-        <a href="index.html" class="back-link">< RETURN_TO_BASE</a>
-    </div>
-
-    <script>
-        function checkAccess() {
-            // Asking for the key you set: miu2026
-            const accessKey = prompt("SYSTEM_LOCKED: ENTER_ACCESS_KEY");
-
-            if (accessKey === "miu2026") {
-                alert("ACCESS_GRANTED. WELCOME MIU LIAN RUI.");
-                document.getElementById('vault-content').style.display = 'block';
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
-            } else {
-                alert("ACCESS_DENIED: UNAUTHORIZED_ENTRY_DETECTED");
-                window.location.href = "index.html"; // Kicks them back to home
-            }
-        }
-
-        // Run the security check immediately when the page finishes loading
-        window.onload = checkAccess;
-    </script>
-
+    </main>
 </body>
 </html>
