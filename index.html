@@ -28,7 +28,32 @@
         
         .status-bar { position: absolute; top: 20px; right: 40px; font-size: 0.7rem; color: var(--dim); }
         .status-bar span { color: var(--accent); margin-left: 15px; }
-    </style>
+   @media (max-width: 768px) {
+    body { 
+        flex-direction: column; 
+        overflow-y: auto; 
+    }
+    nav { 
+        width: 100%; 
+        padding: 20px; 
+        border-right: none; 
+        border-bottom: 1px solid rgba(168, 85, 247, 0.2); 
+    }
+    main { 
+        padding: 30px; 
+    }
+    h1 { 
+        font-size: 2rem; 
+    }
+    .status-bar { 
+        position: relative; 
+        top: 0; 
+        right: 0; 
+        padding: 10px 20px; 
+        background: rgba(15, 23, 42, 0.9);
+    }
+}
+ </style>
 </head>
 <body>
     <div class="grid"></div>
@@ -48,15 +73,16 @@
             <p class="subtitle">
                 Independent Digital Architect. Specialized in System Security, Information Infrastructure, and Architectural Logic. Building secure digital futures without external reliance.
             </p>
-<div class="log-container" id="logs">
-                <div class="log-header">LIVE_SYSTEM_LOGS</div>
-                <div class="log-entry"><span>[FEB 20]</span> SYSTEM_INTEGRITY: 100% // ARCHITECTURE_COMPLETE</div>
-                <div class="log-entry"><span>[FEB 20]</span> CONTACT_GATE: INITIALIZED // UPLINK_ACTIVE</div>
-                <div class="log-entry"><span>[FEB 20]</span> SECURITY_VAULT: DEPLOYED // ASSETS_SYNCED</div>
-                <div class="log-entry"><span>[FEB 20]</span> Repository renamed to miu33-arch.github.io</div>
-                <div class="log-entry"><span>[FEB 20]</span> Deployment of Proton Landing Architecture</div>
-                <div class="log-entry"><span>[SYS]</span> Awaiting next architectural command...</div>
-            </div>          
+            <div class="log-container" id="logs">
+    <div class="log-header">LIVE_SYSTEM_LOGS</div>
+    <div class="log-entry"><span>[FEB 20]</span> SYSTEM_INTEGRITY: 100% // ARCHITECTURE_COMPLETE</div>
+    <div class="log-entry"><span>[FEB 20]</span> CONTACT_GATE: INITIALIZED // UPLINK_ACTIVE</div>
+    <div class="log-entry"><span>[FEB 20]</span> SECURITY_VAULT: DEPLOYED // ASSETS_SYNCED</div>
+    <div class="log-entry"><span>[FEB 20]</span> Repository renamed to miu33-arch.github.io</div>
+    <div class="log-entry"><span>[FEB 20]</span> Deployment of Proton Landing Architecture</div>
+    <div class="log-entry"><span>[SYS]</span> Awaiting next architectural command...</div>
+</div>
+
             
         </div>
     </main>
