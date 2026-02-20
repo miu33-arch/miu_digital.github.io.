@@ -80,23 +80,18 @@
     </div>
 
     <script>
-        function checkAccess() {
-            // Asking for the key you set: miu2026
-            const accessKey = prompt("SYSTEM_LOCKED: ENTER_ACCESS_KEY");
-
-            if (accessKey === "miu2026") {
-                alert("ACCESS_GRANTED. WELCOME MIU LIAN RUI.");
-                document.getElementById('vault-content').style.display = 'block';
-                document.body.style.overflow = 'auto'; // Re-enable scrolling
-            } else {
-                alert("ACCESS_DENIED: UNAUTHORIZED_ENTRY_DETECTED");
-                window.location.href = "index.html"; // Kicks them back to home
-            }
+    function unlock() {
+        const key = prompt("SYSTEM_LOCKED: ENTER_ACCESS_KEY");
+        if (key === "miu2026") {
+            alert("ACCESS_GRANTED");
+            document.getElementById('vault-content').style.display = 'block';
+        } else {
+            alert("ACCESS_DENIED");
+            window.location.href = "index.html";
         }
-
-        // Run the security check immediately when the page finishes loading
-        window.onload = checkAccess;
-    </script>
+    }
+    window.onload = unlock;
+</script>
 
 </body>
 </html>
