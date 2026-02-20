@@ -5,71 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SECURE_VAULT | 缪联睿</title>
     <style>
-        :root { --primary: #a855f7; --bg: #030712; --text: #f8fafc; --accent: #6366f1; }
+        :root { --primary: #a855f7; --bg: #030712; --text: #f8fafc; --accent: #6366f1; --dim: #64748b; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', monospace; }
-        body { background-color: var(--bg); color: var(--text); padding: 40px; display: flex; flex-direction: column; align-items: center; }
-        
-        #vault-content { display: none; width: 100%; max-width: 800px; margin-top: 40px; }
-        
-        .asset-card { 
-            background: #0f172a; 
-            border: 1px solid rgba(168, 85, 247, 0.2); 
-            padding: 30px; 
-            margin-bottom: 30px; 
-            border-left: 4px solid var(--primary);
+        body { background-color: var(--bg); color: var(--text); display: flex; min-height: 100vh; }
+
+        /* Sidebar Navigation */
+        nav { 
+            width: 260px; background: rgba(15, 23, 42, 0.95); border-right: 1px solid rgba(168, 85, 247, 0.2); 
+            padding: 40px 20px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; 
         }
-
-        h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase; }
-        h3 { color: var(--accent); margin-bottom: 15px; font-size: 1rem; }
+        .logo { font-weight: bold; color: var(--primary); margin-bottom: 50px; border-left: 3px solid var(--primary); padding-left: 15px; }
         
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
-        th { text-align: left; padding: 12px; border-bottom: 1px solid #1e293b; color: var(--primary); }
-        td { padding: 12px; border-bottom: 1px solid #0f172a; color: #94a3b8; }
-        
-        .legal-text { font-size: 0.8rem; line-height: 1.6; color: #94a3b8; margin-top: 20px; }
-        .legal-text p { margin-bottom: 10px; }
+        /* Line 12 & Hover Glow */
+        nav a { 
+            color: var(--dim); text-decoration: none; margin-bottom: 25px; font-size: 0.8rem; transition: 0.3s; 
+            display: block; 
+        }
+        nav a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); transform: translateX(5px); }
 
-        button { 
-            background: var(--primary); color: white; border: none; padding: 10px 20px; 
-            cursor: pointer; margin-top: 20px; font-family: inherit; font-weight: bold;
+        /* Vault Content Area */
+        main { flex: 1; padding: 60px; display: flex; flex-direction: column; align-items: center; }
+        #vault-content { display: none; width: 100%; max-width: 800px; animation: fadeIn 0.8s ease-in-out; }
+        
+        .asset-card { background: #0f172a; border: 1px solid rgba(168, 85, 247, 0.2); padding: 30px; margin-bottom: 30px; border-left: 4px solid var(--primary); }
+        h2 { color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            body { flex-direction: column; }
+            nav { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid rgba(168, 85, 247, 0.2); }
         }
     </style>
 </head>
 <body>
 
-    <h1 style="color: var(--primary); letter-spacing: 3px;">SYSTEM_VAULT_ENCRYPTED</h1>
+    <nav>
+        <div class="logo">MIU_PROTON</div>
+        <a href="index.html">[01] CONSOLE_HOME</a>
+        <a href="vault.html" style="color: var(--primary);">[02] SECURITY_VAULT</a>
+        <a href="contact.html">[03] CONTACT_GATE</a>
+    </nav>
 
-    <div id="vault-content">
-        
-        <div class="asset-card">
-            <h2>[01] PRICING_MANIFEST_2026</h2>
-            <table>
-                <tr><th>SERVICE_TYPE</th><th style="text-align:right;">BASE_RATE</th></tr>
-                <tr><td>2D_LAYOUT_OPTIMIZATION</td><td style="text-align:right;">$200 / ROOM</td></tr>
-                <tr><td>3D_CYBER_RENDERING</td><td style="text-align:right;">$450 / VIEW</td></tr>
-                <tr><td>MATERIAL_SPECIFICATION</td><td style="text-align:right;">$150 / PKG</td></tr>
-            </table>
-            <p style="font-size: 0.7rem; color: var(--primary); margin-top: 15px;">> ALL_CONTRACTS_REQUIRE_50%_DEPOSIT [cite: 2026-02-15]</p>
-        </div>
-
-        <div class="asset-card" style="border-left-color: var(--accent);">
-            <h2>[02] DIGITAL_ARCHITECT_AGREEMENT</h2>
-            <div class="legal-text">
-                <p><strong>LOGIC_01:</strong> All blueprints remain the property of 缪联睿 until 100% payment is received.</p>
-                <p><strong>LOGIC_02:</strong> Two (2) architectural revisions are included. Structural changes require new billing.</p>
-                <p><strong>LOGIC_03:</strong> Terminated projects incur a "Kill Fee" equal to the initial 50% deposit [cite: 2026-02-15].</p>
+    <main>
+        <div id="vault-content">
+            <div id="welcome-msg" style="margin-bottom: 40px; padding: 20px; border: 1px double var(--primary); background: rgba(168, 85, 247, 0.05);">
+                <h2 style="margin-bottom: 10px;">// ACCESS_GRANTED_SUCCESSFUL</h2>
+                <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text);">
+                    Welcome to the secure archive of <strong>MIU_PROTON</strong>. You are viewing the proprietary logic, pricing, and legal frameworks of Miù Lián Ruì [cite: 2026-02-15]. 
+                    <br><br>
+                    <span style="color: var(--accent);">NOTICE:</span> All data within this vault is encrypted for client-architect confidentiality. Unauthorized reproduction is a breach of security protocol.
+                </p>
             </div>
-            <button onclick="window.print()">GENERATE_PDF_CONTRACT</button>
-        </div>
 
-        <a href="index.html" style="color: var(--primary); text-decoration: none; font-size: 0.8rem;">[RETURN_TO_CORE_CONSOLE]</a>
-    </div>
+            <div class="asset-card">
+                <h2>[PRICING_MANIFEST]</h2>
+                <p style="font-size: 0.85rem; color: var(--dim);">Standardized rates for Cyber-Industrial Architectural services.</p>
+                <ul style="margin-top: 15px; font-size: 0.85rem; list-style: none;">
+                    <li>> 2D_LAYOUT: $200 / ROOM</li>
+                    <li>> 3D_RENDERING: $450 / VIEW</li>
+                </ul>
+            </div>
+        </div>
+    </main>
 
     <script>
         function unlock() {
             const key = prompt("SYSTEM_LOCKED: ENTER_ACCESS_KEY");
             if (key === "miu2026") {
-                alert("ACCESS_GRANTED: WELCOME MIU LIAN RUI");
                 document.getElementById('vault-content').style.display = 'block';
             } else {
                 alert("ACCESS_DENIED");
@@ -78,6 +81,5 @@
         }
         window.onload = unlock;
     </script>
-
 </body>
 </html>
