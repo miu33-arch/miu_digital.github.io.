@@ -2,25 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>VAULT | MIU_PROTON</title>
+    <title>SECURITY_VAULT | MIU_PROTON</title>
     <style>
-        body { background: #050505; color: white; font-family: 'Courier New', monospace; display: flex; height: 100vh; margin: 0; }
-        nav { width: 280px; border-right: 1px solid #1a1a1a; padding: 50px 30px; display: flex; flex-direction: column; gap: 25px; }
-        nav a { color: #555; text-decoration: none; font-size: 0.85rem; }
-        main { flex: 1; padding: 100px; display: none; }
+        :root { --neon: #a855f7; --bg: #0b0c10; --card-bg: #16161e; }
+        body { background: var(--bg); color: #c0caf5; font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; margin: 0; }
+        nav { width: 250px; border-right: 1px solid #24283b; padding: 40px 20px; display: flex; flex-direction: column; gap: 15px; background: #16161e; }
+        nav a { color: #565f89; text-decoration: none; font-size: 0.8rem; padding: 10px; }
+        nav a:hover, .active { color: var(--neon); background: #24283b; }
+        main { flex: 1; padding: 60px; overflow-y: auto; display: none; }
+        .section-title { color: #fff; border-bottom: 1px solid var(--neon); display: inline-block; padding-bottom: 5px; margin-bottom: 30px; letter-spacing: 2px; font-size: 0.9rem; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .render-card { background: var(--card-bg); border: 1px solid #24283b; padding: 15px; }
+        .render-card img { width: 100%; border: 1px solid #333; margin-bottom: 10px; }
+        .price-tag { color: var(--neon); font-weight: bold; margin-top: 10px; display: block; }
     </style>
 </head>
 <body>
     <nav>
-        <div style="color:white; font-weight:900; margin-bottom:40px;">MIU_PROTON</div>
-        <a href="index.html">[01] CONSOLE_HOME</a>
-        <a href="vault.html" style="color:#a855f7;">[02] SECURITY_VAULT</a>
+        <div style="font-size: 0.7rem; color: #565f89; margin-bottom: 20px;">VAULT_ACCESS_V1.0</div>
+        <a href="index.html">[01] CORE_IDENTITY</a>
+        <a href="vault.html" class="active">[02] SECURITY_VAULT</a>
         <a href="contact.html">[03] CONTACT_GATE</a>
     </nav>
     <main id="vaultContent">
-        <h1>SECURE_ARCHIVE</h1>
-        <p>BLUEPRINT_STAGING: $1,500+</p>
-        <p>INDUSTRIAL_LAYOUT: $3,000+</p>
+        <div class="section-title">| PROPRIETARY_RENDERS</div>
+        <div class="grid">
+            <div class="render-card">
+                <img src="render1.jpg" alt="Interior Rendering 01">
+                <span>CONCEPT: INDUSTRIAL_MINIMALISM</span>
+                <span class="price-tag">STAGING_FEE: $1,500+</span>
+            </div>
+            <div class="render-card">
+                <img src="render2.jpg" alt="Interior Rendering 02">
+                <span>CONCEPT: STRUCTURAL_GEOMETRY</span>
+                <span class="price-tag">LAYOUT_FEE: $3,000+</span>
+            </div>
+        </div>
     </main>
     <script>
         const pass = prompt("IDENTIFICATION REQUIRED:");
