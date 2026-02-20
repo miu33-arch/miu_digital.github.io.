@@ -2,87 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>miu_Proton | Contact Gate</title>
+    <title>CONTACT | MIU_PROTON</title>
     <style>
-        :root { --accent: #a855f7; --bg: #020617; --panel: #0f172a; --text: #f8fafc; --dim: #64748b; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--bg); color: var(--text); font-family: 'Courier New', monospace; display: flex; height: 100vh; overflow: hidden; }
-        
-        /* Sidebar Navigation */
-        nav { width: 240px; background: var(--panel); border-right: 1px solid rgba(168, 85, 247, 0.2); padding: 30px; display: flex; flex-direction: column; }
-        .logo { font-weight: bold; color: var(--accent); margin-bottom: 50px; border-left: 3px solid var(--accent); padding-left: 15px; }
-        nav a { color: var(--dim); text-decoration: none; margin-bottom: 25px; font-size: 0.8rem; transition: 0.3s; display: block; }
-        nav a:hover, nav a.active { color: var(--accent); transform: translateX(5px); text-shadow: 0 0 8px var(--accent); }
-
-        /* Main Contact Gate */
-        main { flex-grow: 1; padding: 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .contact-box { background: rgba(15, 23, 42, 0.8); border: 1px solid var(--accent); padding: 40px; max-width: 600px; width: 100%; text-align: center; box-shadow: 0 0 20px rgba(168, 85, 247, 0.1); }
-        .gate-status { color: var(--accent); font-size: 0.7rem; margin-bottom: 20px; letter-spacing: 2px; }
-        
-        /* Form Styling */
-        form { display: flex; flex-direction: column; gap: 15px; text-align: left; margin-top: 20px; }
-        input, select, textarea { 
-            background: #020617; border: 1px solid #1e293b; padding: 12px; color: white; 
-            font-family: inherit; font-size: 0.8rem; outline: none; 
-        }
-        input:focus, textarea:focus { border-color: var(--accent); }
-        
-        .vault-request { display: flex; align-items: center; gap: 10px; padding: 10px; border: 1px dashed var(--accent); background: rgba(168, 85, 247, 0.05); margin: 5px 0; }
-        
-        .btn-mail { 
-            display: inline-block; margin-top: 20px; padding: 15px; background: var(--accent); 
-            color: var(--bg); font-weight: bold; text-decoration: none; text-align: center;
-            transition: 0.3s; cursor: pointer; border: none; font-family: inherit;
-        }
-        .btn-mail:hover { box-shadow: 0 0 20px rgba(168, 85, 247, 0.5); transform: translateY(-2px); }
-
-        @media (max-width: 768px) {
-            body { flex-direction: column; overflow-y: auto; }
-            nav { width: 100%; height: auto; border-right: none; border-bottom: 1px solid rgba(168, 85, 247, 0.2); }
-            main { padding: 40px 20px; }
-        }
+        body { background: #050505; color: white; font-family: 'Courier New', monospace; display: flex; height: 100vh; margin: 0; }
+        nav { width: 280px; border-right: 1px solid #1a1a1a; padding: 50px 30px; display: flex; flex-direction: column; gap: 25px; }
+        nav a { color: #555; text-decoration: none; font-size: 0.85rem; }
+        main { flex: 1; padding: 100px; display: flex; flex-direction: column; justify-content: center; }
     </style>
 </head>
 <body>
-
     <nav>
-        <div class="logo">MIU_PROTON</div>
+        <div style="color:white; font-weight:900; margin-bottom:40px;">MIU_PROTON</div>
         <a href="index.html">[01] CONSOLE_HOME</a>
         <a href="vault.html">[02] SECURITY_VAULT</a>
-        <a href="contact.html" class="active">[03] CONTACT_GATE</a>
+        <a href="contact.html" style="color:#a855f7;">[03] CONTACT_GATE</a>
     </nav>
-
     <main>
-        <div class="contact-box">
-            <div class="gate-status">// SECURE_COMMUNICATION_CHANNEL_OPEN</div>
-            <h1 style="font-size: 1.5rem; margin-bottom: 10px;">CONTACT_GATE</h1>
-            
-            <form action="mailto:miu.digital.studio@proton.me" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="CLIENT_NAME" required>
-                <select name="service">
-                    <option>SELECT_SERVICE_TYPE</option>
-                    <option>DIGITAL_BLUEPRINTS</option>
-                    <option>HABITAT_STAGING</option>
-                </select>
-                
-                <div class="vault-request">
-                    <input type="checkbox" id="v-req" name="vault_access" value="requested">
-                    <label for="v-req" style="font-size: 0.7rem; color: var(--accent);">REQUEST_VAULT_KEY (miu2026)</label>
-                </div>
-
-                <textarea name="message" placeholder="PROJECT_SCOPE_DETAILS" rows="4"></textarea>
-                
-                <button type="submit" class="btn-mail" onclick="alert('COMMUNICATION_INITIALIZED: Preparing secure uplink to MIU_PROTON...')">
-    SEND_ENCRYPTED_MESSAGE
-</button>
-
-
-            </form>
-
-            <p style="margin-top: 30px; font-size: 0.7rem; color: var(--dim);">PGP_ENCRYPTION: SUPPORTED</p>
-        </div>
+        <h1>CONTACT_GATE</h1>
+        <p>Uplink: miu.digital.studio@proton.me</p>
+        <a href="mailto:miu.digital.studio@proton.me" style="color:#a855f7; border: 1px solid #a855f7; padding: 15px; text-decoration: none;">INITIATE_COMMUNICATION</a>
     </main>
-
 </body>
 </html>
