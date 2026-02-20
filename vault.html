@@ -9,32 +9,37 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', monospace; }
         body { background-color: var(--bg); color: var(--text); display: flex; min-height: 100vh; }
 
-        /* Sidebar Navigation */
+        /* Sidebar Navigation with Line 12 Glow */
         nav { 
             width: 260px; background: rgba(15, 23, 42, 0.95); border-right: 1px solid rgba(168, 85, 247, 0.2); 
             padding: 40px 20px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; 
         }
         .logo { font-weight: bold; color: var(--primary); margin-bottom: 50px; border-left: 3px solid var(--primary); padding-left: 15px; }
-        
-        /* Line 12 & Hover Glow */
-        nav a { 
-            color: var(--dim); text-decoration: none; margin-bottom: 25px; font-size: 0.8rem; transition: 0.3s; 
-            display: block; 
-        }
+        nav a { color: var(--dim); text-decoration: none; margin-bottom: 25px; font-size: 0.8rem; transition: 0.3s; display: block; }
         nav a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary); transform: translateX(5px); }
 
-        /* Vault Content Area */
+        /* Vault Layout */
         main { flex: 1; padding: 60px; display: flex; flex-direction: column; align-items: center; }
         #vault-content { display: none; width: 100%; max-width: 800px; animation: fadeIn 0.8s ease-in-out; }
-        
         .asset-card { background: #0f172a; border: 1px solid rgba(168, 85, 247, 0.2); padding: 30px; margin-bottom: 30px; border-left: 4px solid var(--primary); }
         h2 { color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; }
-        
+
+        /* PDF/Print Logic */
+        @media print {
+            nav, .logo, button { display: none !important; }
+            main { padding: 0 !important; width: 100% !important; }
+            #vault-content { display: block !important; }
+            body { background: white !important; color: black !important; }
+            .asset-card { border: 1px solid #000 !important; background: white !important; color: black !important; }
+            .welcome-box { border: 2px solid #000 !important; background: none !important; color: black !important; }
+        }
+
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         @media (max-width: 768px) {
             body { flex-direction: column; }
             nav { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid rgba(168, 85, 247, 0.2); }
+            main { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -49,9 +54,9 @@
 
     <main>
         <div id="vault-content">
-            <div id="welcome-msg" style="margin-bottom: 40px; padding: 20px; border: 1px double var(--primary); background: rgba(168, 85, 247, 0.05);">
+            <div class="welcome-box" style="margin-bottom: 40px; padding: 20px; border: 1px double var(--primary); background: rgba(168, 85, 247, 0.05);">
                 <h2 style="margin-bottom: 10px;">// ACCESS_GRANTED_SUCCESSFUL</h2>
-                <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text);">
+                <p style="font-size: 0.9rem; line-height: 1.6;">
                     Welcome to the secure archive of <strong>MIU_PROTON</strong>. You are viewing the proprietary logic, pricing, and legal frameworks of Miù Lián Ruì [cite: 2026-02-15]. 
                     <br><br>
                     <span style="color: var(--accent);">NOTICE:</span> All data within this vault is encrypted for client-architect confidentiality. Unauthorized reproduction is a breach of security protocol.
@@ -59,12 +64,27 @@
             </div>
 
             <div class="asset-card">
-                <h2>[PRICING_MANIFEST]</h2>
+                <h2>[01] PRICING_MANIFEST_2026</h2>
                 <p style="font-size: 0.85rem; color: var(--dim);">Standardized rates for Cyber-Industrial Architectural services.</p>
-                <ul style="margin-top: 15px; font-size: 0.85rem; list-style: none;">
-                    <li>> 2D_LAYOUT: $200 / ROOM</li>
-                    <li>> 3D_RENDERING: $450 / VIEW</li>
+                <ul style="margin-top: 15px; font-size: 0.85rem; list-style: none; line-height: 2;">
+                    <li>> 2D_LAYOUT_PLANNING: $200 / ROOM</li>
+                    <li>> 3D_VISUAL_RENDERING: $450 / VIEW</li>
+                    <li>> SITE_VISIT_CONSULT: $150 / HOUR</li>
                 </ul>
+            </div>
+
+            <div style="margin: 30px 0; text-align: center;">
+                <button onclick="window.print()" style="background: transparent; border: 1px solid var(--dim); color: var(--dim); padding: 8px 15px; font-size: 0.7rem; cursor: pointer;">
+                    [GENERATE_PDF_REPORT]
+                </button>
+            </div>
+
+            <div style="margin-top: 50px; display: flex; justify-content: flex-end;">
+                <div style="border: 2px solid var(--primary); padding: 15px; text-align: center; width: 220px; transform: rotate(-3deg); opacity: 0.8;">
+                    <div style="font-size: 0.6rem; letter-spacing: 2px; color: var(--primary);">OFFICIALLY_CERTIFIED</div>
+                    <div style="font-size: 1.1rem; font-weight: bold; margin: 5px 0;">缪联睿 | MIU_L_R</div>
+                    <div style="font-size: 0.6rem; color: var(--dim);">DIGITAL_ARCHITECT_STAMP_2026</div>
+                </div>
             </div>
         </div>
     </main>
@@ -83,3 +103,4 @@
     </script>
 </body>
 </html>
+
