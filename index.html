@@ -5,115 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIU_PROTON | 缪联睿</title>
     <style>
-        :root { --primary: #a855f7; --bg: #030712; --text: #f8fafc; --accent: #6366f1; }
+        :root { --primary: #a855f7; --bg: #030712; --text: #f8fafc; --accent: #6366f1; --glow: rgba(168, 85, 247, 0.4); }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', monospace; }
         
-        body { 
-            background-color: var(--bg); 
-            color: var(--text); 
-            display: flex; 
-            min-height: 100vh; 
-            overflow-x: hidden; 
-        }
+        body { background-color: var(--bg); color: var(--text); display: flex; min-height: 100vh; overflow-x: hidden; }
 
         /* Sidebar Navigation */
         nav { 
-            width: 300px; 
-            background: rgba(15, 23, 42, 0.9); 
-            border-right: 1px solid rgba(168, 85, 247, 0.2); 
-            padding: 40px 20px; 
-            position: sticky; 
-            top: 0; 
-            height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            gap: 15px; 
+            width: 280px; background: rgba(15, 23, 42, 0.95); border-right: 1px solid rgba(168, 85, 247, 0.2); 
+            padding: 40px 20px; position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 15px; z-index: 100;
         }
 
-        .nav-item { 
-            color: var(--text); 
-            text-decoration: none; 
-            padding: 12px; 
-            border: 1px solid transparent; 
-            transition: 0.3s; 
-            font-size: 0.85rem; 
-        }
+        .nav-item { color: var(--text); text-decoration: none; padding: 12px; border: 1px solid transparent; transition: 0.3s; font-size: 0.85rem; }
+        .nav-item:hover { border-color: var(--primary); background: rgba(168, 85, 247, 0.1); color: var(--primary); }
 
-        .nav-item:hover { 
-            border-color: var(--primary); 
-            background: rgba(168, 85, 247, 0.1); 
-            color: var(--primary); 
-        }
-
-        /* Main Content Area */
-        main { flex: 1; padding: 60px; max-width: 1000px; }
-        .section { margin-bottom: 80px; }
+        /* Main Content */
+        main { flex: 1; padding: 60px; max-width: 1000px; scroll-behavior: smooth; }
+        .section { margin-bottom: 120px; padding-top: 20px; } /* Increased margin for better "slide" */
         
         h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 5px; }
-        .pinyin { font-size: 1.2rem; color: var(--accent); margin-bottom: 30px; letter-spacing: 2px; }
+        .pinyin { font-size: 1.1rem; color: var(--accent); margin-bottom: 30px; letter-spacing: 2px; }
         
-        h2 { 
-            color: var(--primary); 
-            margin-bottom: 25px; 
-            font-size: 1.4rem; 
-            border-left: 3px solid var(--primary); 
-            padding-left: 15px; 
-        }
+        h2 { color: var(--primary); margin-bottom: 25px; font-size: 1.4rem; border-left: 3px solid var(--primary); padding-left: 15px; text-transform: uppercase; }
 
-        p { line-height: 1.8; color: #94a3b8; margin-bottom: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { padding: 25px; background: #0f172a; border: 1px solid rgba(168, 85, 247, 0.1); }
+        .card h3 { color: var(--primary); margin-bottom: 12px; font-size: 0.9rem; }
 
-        /* Grid for Vision & Services */
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; 
-        }
-
-        .card { 
-            padding: 25px; 
-            background: #0f172a; 
-            border: 1px solid rgba(168, 85, 247, 0.1); 
-            border-radius: 2px; 
-        }
-
-        .card h3 { 
-            color: var(--primary); 
-            margin-bottom: 12px; 
-            font-size: 0.9rem; 
-            text-transform: uppercase;
-        }
-
-        /* Terminal Style Logs */
+        /* Terminal Logs Section with Glow */
         .log-container { 
-            background: #0f172a; 
-            border: 1px solid #1e293b; 
-            padding: 25px; 
-            margin-top: 40px; 
+            background: #020617; border: 1px solid var(--primary); padding: 25px; margin-top: 40px;
+            box-shadow: 0 0 15px var(--glow); /* Neon glow added here */
         }
 
-        .log-header { 
-            color: var(--primary); 
-            font-weight: bold; 
-            margin-bottom: 15px; 
-            font-size: 0.8rem; 
-            border-bottom: 1px solid #1e293b;
-            padding-bottom: 10px;
-        }
-
-        .log-entry { font-size: 0.8rem; margin-bottom: 8px; color: #64748b; }
-        .log-entry span { color: var(--primary); margin-right: 10px; }
+        .log-header { color: var(--primary); font-weight: bold; margin-bottom: 15px; font-size: 0.8rem; border-bottom: 1px solid #1e293b; padding-bottom: 10px; }
+        .log-entry { font-size: 0.8rem; margin-bottom: 8px; color: #94a3b8; }
+        .log-entry span { color: var(--primary); margin-right: 10px; font-weight: bold; }
 
         /* MOBILE FIX: Enable Scrolling/Slide */
         @media (max-width: 768px) {
             body { flex-direction: column; overflow-y: auto !important; }
-            nav { 
-                width: 100%; 
-                height: auto; 
-                position: relative; 
-                border-right: none; 
-                border-bottom: 1px solid #1e293b; 
-                padding: 20px; 
-            }
+            nav { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid #1e293b; padding: 20px; }
             main { padding: 30px 20px; }
             h1 { font-size: 1.8rem; }
         }
@@ -131,18 +63,18 @@
     </nav>
 
     <main>
-        <section class="section">
+        <section class="section" id="identity">
             <h1>MIU LIAN RUI | 缪联睿</h1>
             <div class="pinyin">Miù Lián Ruì</div>
-            <p>Independent Digital Architect. Building high-integrity digital systems and Cyber-Industrial physical habitats.</p>
+            <p>Independent Digital Architect. Specialized in Cyber-Industrial physical habitats and secure digital infrastructure [cite: 2026-02-15].</p>
         </section>
 
-        <section class="section">
+        <section class="section" id="vision">
             <h2>VISION_LOGIC_LEGACY</h2>
             <div class="grid">
                 <div class="card">
                     <h3>THE_VISION</h3>
-                    <p>Total autonomy through design. Merging digital security with physical sanctuary to create a self-sustaining ecosystem.</p>
+                    <p>Building a legacy of total autonomy where digital and physical security merge into one sanctuary [cite: 2026-02-15].</p>
                 </div>
                 <div class="card">
                     <h3>THE_MISSION</h3>
@@ -156,23 +88,25 @@
             <div class="grid">
                 <div class="card">
                     <h3>DIGITAL_BLUEPRINTS</h3>
-                    <p>Advanced floor plan optimization for minimalist urban command centers. Efficiency is the priority.</p>
+                    <p>Precise floor plan optimization for minimalist workspaces and urban command centers.</p>
                 </div>
                 <div class="card">
                     <h3>CYBER_HABITAT_STAGING</h3>
-                    <p>Virtual interior rendering. Transforming raw spaces into high-tech, industrial habitats.</p>
+                    <p>Virtual interior rendering to transform raw rooms into high-tech industrial environments.</p>
                 </div>
             </div>
         </section>
 
-        <div class="log-container" id="logs">
-            <div class="log-header">LIVE_SYSTEM_LOGS</div>
-            <div class="log-entry"><span>[FEB 20]</span> IDENTITY: MIU LIAN RUI // 缪联睿 // VERIFIED</div>
-            <div class="log-entry"><span>[FEB 20]</span> STATUS: INDEPENDENT_OPERATIONS_ACTIVE [cite: 2026-02-15]</div>
-            <div class="log-entry"><span>[FEB 20]</span> UI: MOBILE_RESPONSIVE_SLIDE_ENABLED</div>
-            <div class="log-entry"><span>[FEB 20]</span> SECURITY: VAULT_LOCKED // KEY: miu2026</div>
-            <div class="log-entry"><span>[SYS]</span> Awaiting architectural sync...</div>
-        </div>
+        <section id="logs" class="section">
+            <div class="log-container">
+                <div class="log-header">LIVE_SYSTEM_LOGS</div>
+                <div class="log-entry"><span>[SYS]</span> IDENTITY: 缪联睿 // VERIFIED</div>
+                <div class="log-entry"><span>[SYS]</span> STATUS: INDEPENDENT_STATION_ONLINE [cite: 2026-02-15]</div>
+                <div class="log-entry"><span>[SYS]</span> NAVIGATION: ANCHOR_IDS_FIXED</div>
+                <div class="log-entry"><span>[SYS]</span> MODULE: DESIGN_STUDIO_VISIBLE</div>
+                <div class="log-entry"><span>[SYS]</span> Awaiting architectural sync...</div>
+            </div>
+        </section>
     </main>
 
 </body>
