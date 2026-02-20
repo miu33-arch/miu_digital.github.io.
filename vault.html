@@ -5,94 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SECURE_VAULT | 缪联睿</title>
     <style>
-        :root {
-            --primary: #a855f7;
-            --bg: #030712;
-            --text: #f8fafc;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Courier New', monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        /* Content starts hidden */
-        #vault-content {
-            display: none;
-            padding: 40px;
-            max-width: 800px;
-            width: 100%;
-            overflow-y: auto;
-            height: 100vh;
-        }
-
-        .vault-header {
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        h1 { color: var(--primary); letter-spacing: 4px; }
+        :root { --primary: #a855f7; --bg: #030712; --text: #f8fafc; --accent: #6366f1; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', monospace; }
+        body { background-color: var(--bg); color: var(--text); padding: 40px; display: flex; flex-direction: column; align-items: center; }
         
-        .asset-card {
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            padding: 20px;
-            margin-bottom: 20px;
+        #vault-content { display: none; width: 100%; max-width: 800px; margin-top: 40px; }
+        
+        .asset-card { 
+            background: #0f172a; 
+            border: 1px solid rgba(168, 85, 247, 0.2); 
+            padding: 30px; 
+            margin-bottom: 30px; 
+            border-left: 4px solid var(--primary);
         }
 
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 0.8rem;
+        h2 { color: var(--primary); margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase; }
+        h3 { color: var(--accent); margin-bottom: 15px; font-size: 1rem; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
+        th { text-align: left; padding: 12px; border-bottom: 1px solid #1e293b; color: var(--primary); }
+        td { padding: 12px; border-bottom: 1px solid #0f172a; color: #94a3b8; }
+        
+        .legal-text { font-size: 0.8rem; line-height: 1.6; color: #94a3b8; margin-top: 20px; }
+        .legal-text p { margin-bottom: 10px; }
+
+        button { 
+            background: var(--primary); color: white; border: none; padding: 10px 20px; 
+            cursor: pointer; margin-top: 20px; font-family: inherit; font-weight: bold;
         }
     </style>
 </head>
 <body>
 
+    <h1 style="color: var(--primary); letter-spacing: 3px;">SYSTEM_VAULT_ENCRYPTED</h1>
+
     <div id="vault-content">
-        <div class="vault-header">
-            <h1>SECURITY_VAULT_DECRYPTED</h1>
-            <p>Welcome, Architect. Accessing proprietary design assets.</p>
-        </div>
-
+        
         <div class="asset-card">
-            <h3>[FILE] PROJECT_CYBER_HABITAT_V1</h3>
-            <p>> Lighting Scripts: RGBIC_NEON_CORE</p>
-            <p>> Material Specs: CONCRETE_STEEL_GLASS</p>
+            <h2>[01] PRICING_MANIFEST_2026</h2>
+            <table>
+                <tr><th>SERVICE_TYPE</th><th style="text-align:right;">BASE_RATE</th></tr>
+                <tr><td>2D_LAYOUT_OPTIMIZATION</td><td style="text-align:right;">$200 / ROOM</td></tr>
+                <tr><td>3D_CYBER_RENDERING</td><td style="text-align:right;">$450 / VIEW</td></tr>
+                <tr><td>MATERIAL_SPECIFICATION</td><td style="text-align:right;">$150 / PKG</td></tr>
+            </table>
+            <p style="font-size: 0.7rem; color: var(--primary); margin-top: 15px;">> ALL_CONTRACTS_REQUIRE_50%_DEPOSIT [cite: 2026-02-15]</p>
         </div>
 
-        <div class="asset-card">
-            <h3>[FILE] CHINESE_ARCHITECTURAL_LOGIC</h3>
-            <p>> Traditional Principles x Cybernetic Execution</p>
+        <div class="asset-card" style="border-left-color: var(--accent);">
+            <h2>[02] DIGITAL_ARCHITECT_AGREEMENT</h2>
+            <div class="legal-text">
+                <p><strong>LOGIC_01:</strong> All blueprints remain the property of 缪联睿 until 100% payment is received.</p>
+                <p><strong>LOGIC_02:</strong> Two (2) architectural revisions are included. Structural changes require new billing.</p>
+                <p><strong>LOGIC_03:</strong> Terminated projects incur a "Kill Fee" equal to the initial 50% deposit [cite: 2026-02-15].</p>
+            </div>
+            <button onclick="window.print()">GENERATE_PDF_CONTRACT</button>
         </div>
 
-        <a href="index.html" class="back-link">< RETURN_TO_BASE</a>
+        <a href="index.html" style="color: var(--primary); text-decoration: none; font-size: 0.8rem;">[RETURN_TO_CORE_CONSOLE]</a>
     </div>
 
     <script>
-    function unlock() {
-        const key = prompt("SYSTEM_LOCKED: ENTER_ACCESS_KEY");
-        if (key === "miu2026") {
-            alert("ACCESS_GRANTED");
-            document.getElementById('vault-content').style.display = 'block';
-        } else {
-            alert("ACCESS_DENIED");
-            window.location.href = "index.html";
+        function unlock() {
+            const key = prompt("SYSTEM_LOCKED: ENTER_ACCESS_KEY");
+            if (key === "miu2026") {
+                alert("ACCESS_GRANTED: WELCOME MIU LIAN RUI");
+                document.getElementById('vault-content').style.display = 'block';
+            } else {
+                alert("ACCESS_DENIED");
+                window.location.href = "index.html";
+            }
         }
-    }
-    window.onload = unlock;
-</script>
+        window.onload = unlock;
+    </script>
 
 </body>
 </html>
-
