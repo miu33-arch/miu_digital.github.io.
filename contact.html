@@ -2,46 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Contact Gate | MIU_33</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>miu_Proton | Contact Gate</title>
-    <style>
-        :root { --accent: #a855f7; --bg: #020617; --panel: #0f172a; --text: #f8fafc; --dim: #64748b; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', monospace; }
-        body { background: var(--bg); color: var(--text); display: flex; height: 100vh; overflow: hidden; }
-        nav { width: 240px; background: var(--panel); border-right: 1px solid rgba(168, 85, 247, 0.2); padding: 30px; display: flex; flex-direction: column; }
-        .logo { font-weight: bold; color: var(--accent); margin-bottom: 50px; border-left: 3px solid var(--accent); padding-left: 15px; }
-        nav a { color: var(--dim); text-decoration: none; margin-bottom: 25px; font-size: 0.8rem; }
-        main { flex-grow: 1; display: flex; justify-content: center; align-items: center; padding: 60px; }
-        .contact-box { background: var(--panel); border: 1px solid var(--accent); padding: 40px; max-width: 600px; width: 100%; box-shadow: 0 0 20px rgba(168, 85, 247, 0.1); }
-        form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
-        input, select, textarea { background: #020617; border: 1px solid #1e293b; padding: 12px; color: white; font-family: inherit; font-size: 0.8rem; outline: none; }
-        input:focus { border-color: var(--accent); }
-        .btn-mail { background: var(--accent); color: var(--bg); padding: 15px; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
-        .btn-mail:hover { box-shadow: 0 0 20px rgba(168, 85, 247, 0.5); transform: translateY(-2px); }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">MIU_PROTON</div>
-        <a href="index.html">[01] CONSOLE_HOME</a>
-        <a href="vault.html">[02] SECURITY_VAULT</a>
-        <a href="contact.html" style="color: var(--accent);">[03] CONTACT_GATE</a>
-    </nav>
-    <main>
-        <div class="contact-box">
-            <div style="color: var(--accent); font-size: 0.7rem; letter-spacing: 2px;">// CHANNEL_OPEN</div>
-            <h1 style="font-size: 1.5rem; margin: 10px 0;">CONTACT_GATE</h1>
-            <form action="mailto:miu.digital.studio@proton.me" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="CLIENT_NAME" required>
-                <select name="service">
-                    <option>DIGITAL_BLUEPRINTS</option>
-                    <option>HABITAT_STAGING</option>
-                </select>
-                <textarea name="message" placeholder="PROJECT_SCOPE_DETAILS" rows="4"></textarea>
-                <button type="submit" class="btn-mail">SEND_ENCRYPTED_MESSAGE</button>
-            </form>
-        </div>
-    </main>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>MIU_33</h2>
+    <div class="sidebar-stamp">缪联睿</div>
+    <a href="index.html">Console</a>
+    <a href="vault.html">Security Vault</a>
+    <a href="contact.html">Contact Gate</a>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+    <div class="title">Contact Gate</div>
+
+    <div class="box">
+        > Opening communication channel…<br>
+        > Encryption enabled.<br><br>
+
+        <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+            <!-- Redirect to success page -->
+            <input type="hidden" name="_redirect" value="https://miu33-arch.github.io/contact-success.html">
+
+            <label>Name</label>
+            <input type="text" name="name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>Message</label>
+            <textarea name="message" rows="6" required></textarea>
+
+            <button type="submit">Transmit</button>
+        </form>
+    </div>
+
+    <footer class="footer-signature">
+        © ANAMY PADILLA · 缪联睿 · Miù Lián Ruì
+    </footer>
+</div>
+
 </body>
 </html>
-
