@@ -1,14 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Security Vault | MIU_33</title>
+    <title>Contact Gate | MIU_33</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- SIDEBAR -->
 <div class="sidebar">
     <h2>MIU_33</h2>
     <div class="sidebar-stamp">缪联睿</div>
@@ -17,63 +17,36 @@
     <a href="contact.html">Contact Gate</a>
 </div>
 
+<!-- MAIN CONTENT -->
 <div class="main">
-    <div class="title">Security Vault</div>
+    <div class="title">Contact Gate</div>
 
     <div class="box">
-        > Accessing encrypted archives…<br>
-        > Authentication: VERIFIED<br>
-        > Opening vault…<br><br>
+        > Opening communication channel…<br>
+        > Encryption enabled.<br><br>
 
-        This vault contains conceptual frameworks, system diagrams, and digital‑architectural logic models.<br><br>
+        <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST">
+            <!-- Redirect to success page -->
+            <input type="hidden" name="_redirect" value="https://miu33-arch.github.io/contact-success.html">
 
-        <strong>Enter Access Key to Unlock Secret Mode:</strong><br><br>
+            <label>Name</label>
+            <input type="text" name="name" required>
 
-        <input type="password" id="secretInput" placeholder="> Enter Access Key">
-        <button onclick="unlockSecret()">Unlock</button>
+            <label>Email</label>
+            <input type="email" name="email" required>
 
-        <div id="secretError" style="color:#d40000; margin-top:10px; display:none;">
-            > ACCESS DENIED — Invalid Key
-        </div>
+            <label>Message</label>
+            <textarea name="message" rows="6" required></textarea>
+
+            <button type="submit">Transmit</button>
+        </form>
     </div>
-
-    <!-- Hidden Secret Mode -->
-    <div id="secretMode" class="box" style="display:none; margin-top:20px;">
-        > ACCESS GRANTED — Secret Mode Unlocked<br>
-        > Decrypting hidden modules…<br><br>
-
-        <strong>MIU_33 SECRET MODULES:</strong><br>
-        - Quantum Spatial Logic<br>
-        - Industrial Black‑Box Blueprints<br>
-        - MIU_33 Prototype Systems<br>
-        - Encrypted Architect Archives<br><br>
-
-        Additional secret modules will unlock as MIU_33 evolves.
-    </div>
-
-    <div class="seal-stamp">缪联睿</div>
 
     <footer class="footer-signature">
         © ANAMY PADILLA · 缪联睿 · Miù Lián Ruì
     </footer>
 </div>
 
-<script>
-function unlockSecret() {
-    const input = document.getElementById("secretInput").value;
-    const error = document.getElementById("secretError");
-    const secret = document.getElementById("secretMode");
-
-    if (input === "MIU_SECRET_2026") {
-        error.style.display = "none";
-        secret.style.display = "block";
-        secret.scrollIntoView({ behavior: "smooth" });
-    } else {
-        error.style.display = "block";
-        secret.style.display = "none";
-    }
-}
-</script>
-
 </body>
 </html>
+
