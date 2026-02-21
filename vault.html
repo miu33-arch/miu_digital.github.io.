@@ -1,138 +1,79 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Security Vault | MIU_33</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SECURE_VAULT | 缪联睿</title>
-    <style>
-        :root { --accent: #a855f7; --bg: #020617; --panel: #0f172a; --text: #f8fafc; --dim: #64748b; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', monospace; }
-        body { background-color: var(--bg); color: var(--text); display: flex; min-height: 100vh; }
-        nav { width: 240px; background: var(--panel); border-right: 1px solid rgba(168, 85, 247, 0.2); padding: 30px; display: flex; flex-direction: column; position: sticky; top: 0; height: 100vh; }
-        .logo { font-weight: bold; color: var(--accent); margin-bottom: 50px; border-left: 3px solid var(--accent); padding-left: 15px; }
-        nav a { color: var(--dim); text-decoration: none; margin-bottom: 25px; font-size: 0.8rem; }
-        main { flex: 1; padding: 60px; display: none; }
-        .asset-card { background: var(--panel); border: 1px solid rgba(168, 85, 247, 0.2); padding: 30px; margin-bottom: 30px; border-left: 4px solid var(--accent); }
-        h2 { color: var(--accent); margin-bottom: 15px; font-size: 1.1rem; }
-        .btn-print { background: transparent; border: 1px solid var(--dim); color: var(--dim); padding: 10px 20px; font-size: 0.7rem; cursor: pointer; transition: 0.3s; }
-        .btn-print:hover { border-color: var(--accent); color: var(--accent); }
-        @media print { nav, button { display: none !important; } main { display: block !important; padding: 0; } body { background: white; color: black; } }
-    <style>
-    :root { --accent: #a855f7; --bg: #020617; --panel: #0f172a; --text: #f8fafc; --dim: #64748b; }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', monospace; }
-    
-    body { 
-        background-color: var(--bg); 
-        color: var(--text); 
-        display: flex; 
-        min-height: 100vh;
-        flex-direction: row; /* Desktop Default */
-    }
-
-    /* --- SIDEBAR LOGIC --- */
-    nav { 
-        width: 240px; 
-        background: var(--panel); 
-        border-right: 1px solid rgba(168, 85, 247, 0.2); 
-        padding: 40px 20px; 
-        display: flex; 
-        flex-direction: column; 
-        position: sticky; 
-        top: 0; 
-        height: 100vh;
-        flex-shrink: 0;
-    }
-
-    .logo { font-weight: bold; color: var(--accent); margin-bottom: 50px; border-left: 3px solid var(--accent); padding-left: 15px; }
-    nav a { color: var(--dim); text-decoration: none; margin-bottom: 25px; font-size: 0.8rem; display: block; }
-    nav a.active { color: var(--accent); text-shadow: 0 0 8px var(--accent); }
-
-    /* --- CONTENT AREA --- */
-    main { flex-grow: 1; padding: 60px; max-width: 1200px; }
-    .hero-title { font-size: 2.2rem; color: #fff; margin-bottom: 20px; }
-    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-    .card { background: var(--panel); border: 1px solid rgba(168, 85, 247, 0.1); padding: 25px; border-left: 2px solid var(--accent); }
-
-    /* --- THE MOBILE FIX (CRITICAL) --- */
-    @media (max-width: 800px) {
-        body { flex-direction: column; } /* Menu goes to TOP */
-        
-        nav { 
-            width: 100%; 
-            height: auto; 
-            position: relative; 
-            border-right: none; 
-            border-bottom: 1px solid rgba(168, 85, 247, 0.2); 
-            padding: 20px;
-            flex-direction: row; /* Menu items go side-by-side */
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            gap: 15px;
-        }
-
-        .logo { width: 100%; margin-bottom: 15px !important; font-size: 0.9rem; }
-        nav a { margin: 0; font-size: 0.7rem; }
-
-        main { padding: 30px 20px; }
-        .hero-title { font-size: 1.5rem; line-height: 1.3; }
-        
-        /* This makes your "Vision/Mission" grids stack vertically instead of squishing */
-        .grid { 
-            grid-template-columns: 1fr; 
-        }
-        
-        .name-header { font-size: 0.7rem; }
-    }
-</style>
-
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="logo">MIU_PROTON</div>
-        <a href="index.html">[01] CONSOLE_HOME</a>
-        <a href="vault.html" style="color: var(--accent);">[02] SECURITY_VAULT</a>
-        <a href="contact.html">[03] CONTACT_GATE</a>
-    </nav>
-    <main id="vaultContent">
-        <div style="color: var(--accent); font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 30px;">// ACCESS_GRANTED</div>
-        <div class="asset-card">
-            <h2>[01] PRICING_MANIFEST_2026</h2>
-            <ul style="list-style: none; font-size: 0.85rem; line-height: 2.5; color: var(--dim);">
-                <li>> 2D_LAYOUT_PLANNING: $200 / ROOM</li>
-                <li>> 3D_VISUAL_RENDERING: $450 / VIEW</li>
-                <li>> SITE_VISIT_CONSULT: $150 / HOUR</li>
-            </ul>
-        </div>
-        <button class="btn-print" onclick="window.print()">[GENERATE_PDF_REPORT]</button>
-        <div style="margin-top: 80px; padding-top: 30px; border-top: 1px solid rgba(168, 85, 247, 0.1); width: 100%;">
-    <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-        
-        <div style="font-family: 'Courier New', monospace;">
-            <div style="font-size: 0.7rem; color: var(--accent); letter-spacing: 2px; margin-bottom: 5px;">// AUTHORIZED_BY</div>
-            <div style="font-size: 1.4rem; color: #fff; font-weight: bold;">Anamy Padilla</div>
-            <div style="font-size: 1.1rem; color: var(--dim);">Miù Lián Ruì | 缪联睿</div>
-            <div style="font-size: 0.65rem; color: var(--accent); margin-top: 10px;">ID_REF: AP-MLR-2026-ARCH</div>
-        </div>
 
-        <div style="border: 2px solid var(--accent); padding: 15px; text-align: center; width: 240px; transform: rotate(-2deg); background: rgba(168, 85, 247, 0.02); box-shadow: 0 0 15px rgba(168, 85, 247, 0.1);">
-            <div style="font-size: 0.6rem; letter-spacing: 3px; color: var(--accent); text-transform: uppercase;">Officially_Certified</div>
-            <div style="font-size: 1.2rem; font-weight: 900; margin: 8px 0; color: #fff;">缪联睿</div>
-            <div style="font-size: 0.7rem; color: var(--dim); border-top: 1px solid rgba(168, 85, 247, 0.3); padding-top: 5px;">
-                ANAMY PADILLA<br>
-                DIGITAL ARCHITECT 2026
-            </div>
-        </div>
-
-    </div>
+<div class="sidebar">
+    <h2>MIU_33</h2>
+    <div class="sidebar-stamp">缪联睿</div>
+    <a href="index.html">Console</a>
+    <a href="vault.html">Security Vault</a>
+    <a href="contact.html">Contact Gate</a>
 </div>
 
-    </main>
-    <script>
-        const key = prompt("SYSTEM_LOCKED: ENTER_ACCESS_KEY");
-        if (key === "miu2026") { document.getElementById('vaultContent').style.display = 'block'; }
-        else { alert("ACCESS_DENIED"); window.location.href = "index.html"; }
-    </script>
+<div class="main">
+    <div class="title">Security Vault</div>
+
+    <div class="box">
+        > Accessing encrypted archives…<br>
+        > Authentication: VERIFIED<br>
+        > Opening vault…<br><br>
+
+        This vault contains conceptual frameworks, system diagrams, and digital‑architectural logic models.<br><br>
+
+        <strong>Enter Access Key to Unlock Secret Mode:</strong><br><br>
+
+        <input type="password" id="secretInput" placeholder="> Enter Access Key">
+        <button onclick="unlockSecret()">Unlock</button>
+
+        <div id="secretError" style="color:#d40000; margin-top:10px; display:none;">
+            > ACCESS DENIED — Invalid Key
+        </div>
+    </div>
+
+    <!-- Hidden Secret Mode -->
+    <div id="secretMode" class="box" style="display:none; margin-top:20px;">
+        > ACCESS GRANTED — Secret Mode Unlocked<br>
+        > Decrypting hidden modules…<br><br>
+
+        <strong>MIU_33 SECRET MODULES:</strong><br>
+        - Quantum Spatial Logic<br>
+        - Industrial Black‑Box Blueprints<br>
+        - MIU_33 Prototype Systems<br>
+        - Encrypted Architect Archives<br><br>
+
+        Additional secret modules will unlock as MIU_33 evolves.
+    </div>
+
+    <div class="seal-stamp">缪联睿</div>
+
+    <footer class="footer-signature">
+        © ANAMY PADILLA · 缪联睿 · Miù Lián Ruì
+    </footer>
+</div>
+
+<script>
+function unlockSecret() {
+    const input = document.getElementById("secretInput").value;
+    const error = document.getElementById("secretError");
+    const secret = document.getElementById("secretMode");
+
+    if (input === "MIU_SECRET_2026") {
+        error.style.display = "none";
+        secret.style.display = "block";
+        secret.scrollIntoView({ behavior: "smooth" });
+    } else {
+        error.style.display = "block";
+        secret.style.display = "none";
+    }
+}
+</script>
+
 </body>
 </html>
-
