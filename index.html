@@ -2,44 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MIU_PROTON | Console</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>MIU_33 | Digital Architect Console</title>
+    <meta name="author" content="Anamy Padilla">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="terminal-root">
 
-<div class="sidebar">
-    <h2>MIU_33</h2>
-    <div class="sidebar-stamp">缪联睿</div>
-    <a href="index.html">Console</a>
-    <a href="vault.html">Security Vault</a>
-    <a href="contact.html">Contact Gate</a>
-</div>
+    <nav class="sidebar">
+        <div class="brand">MIU_33</div>
+        
+        <ul class="nav-links">
+            <li><a href="#console">_Console</a></li>
+            <li><a href="#security-vault">_Security_Vault</a></li>
+        </ul>
 
-<div class="main">
-    <div class="title">System Initialization</div>
+        <div class="social-header">CONNECTIVITY_GATE</div>
+        <ul class="nav-links">
+            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+            <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+            <li><a href="#" target="_blank">Rednote (小红书)</a></li>
+        </ul>
+    </nav>
 
-    <div class="box">
-        > Booting MIU_PROTON v3.3…<br>
-        > Establishing digital architecture core…<br>
-        > Loading spatial logic modules…<br>
-        > Integrity check: PASSED<br>
-        > Environment secure.<br><br>
+    <main class="console-interface">
+        <section id="console">
+            <h2>System Initialization</h2>
+            <div class="boot-log">
+                <p>> Booting MIU_PROTON v3.3...</p>
+                <p>> Establishing digital architecture core...</p>
+                <p>> Integrity check: PASSED</p>
+                <p>> Environment secure.</p>
+            </div>
+            
+            <div class="owner-card">
+                <h3>ANAMY PADILLA</h3>
+                <div class="red-seal">缪联睿</div>
+                <p class="pinyin">Miù Lián Ruì</p>
+            </div>
+        </section>
 
-        Welcome to the MIU_33 Digital Architecture Console.<br>
-        A fusion of industrial logic, secure systems, and future‑ready design.
-    </div>
+        <section id="security-vault">
+            <h2>Security Vault</h2>
+            <div class="vault-interface">
+                <p>Enter Access Key to Unlock Secret Mode:</p>
+                <input type="password" id="accessKey" placeholder="> Access Key">
+                <button onclick="unlockVault()" class="proton-button">Unlock</button>
+            </div>
 
-    <div class="neon-stamp">
-        <div class="neon-name">ANAMY PADILLA</div>
-        <div class="neon-cn">缪联睿</div>
-        <div class="neon-pinyin">Miù Lián Ruì</div>
-    </div>
+            <div id="secretContent" style="display: none;">
+                <div class="status-box proton-accent">
+                    <p>> SECRET MODE: ACTIVE</p>
+                    <p>> ENCRYPTED CHANNEL OPEN</p>
+                </div>
+                <p>Authentication successful. Access the Architect directly:</p>
+                
+                <a href="mailto:miu.digital.studio@proton.me?subject=MIU_33 Inquiry&body=Hello Anamy, I saw your work and would like to discuss a project." 
+                   class="contact-link">
+                    ESTABLISH CONNECTION
+                </a>
+            </div>
+        </section>
 
-    <footer class="footer-signature">
-        © ANAMY PADILLA · 缪联睿 · Miù Lián Ruì
-    </footer>
-</div>
+        <footer class="legal-stamp">
+            <p>© ANAMY PADILLA | 缪联睿</p>
+        </footer>
+    </main>
 
+    <script src="vault.js"></script>
 </body>
 </html>
