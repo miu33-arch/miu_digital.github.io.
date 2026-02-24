@@ -6,7 +6,10 @@
     <title>MIU_33 | Console</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body oncontextmenu="return false;"> <nav class="s-b"> <h2 class="h2-m">MIU_33</h2>
+<body oncontextmenu="return false;">
+
+    <nav class="s-b">
+        <h2 class="h2-m">MIU_33</h2>
         <div class="st-m" aria-label="ID: MLR">缪联睿</div>
         <a href="#c-0">Console</a>
         <a href="#v-0">Vault</a>
@@ -15,28 +18,32 @@
         <a href="https://www.linkedin.com/in/miu-digital-architect/" target="_blank">LI</a>
         <a href="https://www.facebook.com/share/18KYkL41JW/" target="_blank">FB</a>
         <a href="https://www.xiaohongshu.com/user/profile/95449308409" target="_blank">RN</a>
-        <a href="https://www.tiktok.com/@miuprotontj" target="_blank">TK</a>
+        <a href="https://www.tiktok.com/@miuproton" target="_blank">TK</a>
     </nav>
 
     <main class="m-c">
         <section id="c-0">
-            <button onclick="readPhilosophy()" class="btn-s">[AUDIO]</button>
-            <button onclick="togglePrivacy()" class="btn-s p-b">[CLOAK]</button>
+            <div class="control-panel">
+                <button onclick="readPhilosophy()" class="btn-s">[AUDIO]</button>
+                <button onclick="togglePrivacy()" class="btn-s p-b">[CLOAK: OFF]</button>
+            </div>
 
             <div class="p-x">
                 <p>> [L_0]: PHILOSOPHY</p>
                 <p>Architecting digital ecosystems with industrial precision.</p>
+                <p>A signature that endures — the bridge between Western structural logic and Eastern symbolic depth.</p>
             </div>
         </section>
 
-        <section id="v-0">
+        <section id="v-0" style="margin-top: 50px;">
             <div class="v-t">
-                <input type="password" id="accessKey" placeholder="> _">
+                <input type="password" id="accessKey" placeholder="> Access Key">
                 <button onclick="unlockVault()" class="btn-s">GO</button>
             </div>
             
             <div id="secretContent" style="display:none;">
-                <a id="cvDownload" href="Anamy_Padilla_CV.pdf" download class="d-b">[FILE]</a>
+                <p style="color: #BC13FE;">> SYSTEM_ACCESS: GRANTED</p>
+                <a id="cvDownload" href="Anamy_Padilla_CV.pdf" download class="d-b">[DOWNLOAD_LOGS]</a>
             </div>
 
             <img src="red-seal.png" alt="MLR" class="r-s">
