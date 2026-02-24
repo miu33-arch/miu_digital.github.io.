@@ -3,7 +3,7 @@ function unlockVault() {
     const secretArea = document.getElementById("secretContent");
 
     // The key is miu2026
-    if (key === "miu2026") {
+    if (key === "MIU_SECRET_2026") {
         secretArea.style.display = "block";
         alert("ACCESS GRANTED. WELCOME ARCHITECT.");
     } else {
