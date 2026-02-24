@@ -1,56 +1,11 @@
-/* === MIU_33 DIGITAL ARCHITECT GLOBAL STYLE === */
-body {
-    background-color: #000;
-    color: #00FF41; /* High Contrast Green */
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    display: flex;
-    font-size: 1.1rem; /* Scalable for glasses */
-}
-
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    border-right: 2px solid #00FF41;
-    padding: 20px;
-    position: fixed;
-}
-
-.content { margin-left: 280px; padding: 40px; width: 100%; }
-
-.philosophy-box {
-    border: 2px solid #BC13FE; /* Identity Purple */
-    padding: 20px;
-    background: rgba(0,0,0,0.8);
-    transition: filter 0.3s ease;
-}
-
-.privacy-active { filter: blur(15px); user-select: none; }
-
-.system-btn {
-    background: transparent;
-    border: 1px solid #00FF41;
-    color: #00FF41;
-    padding: 10px;
-    cursor: pointer;
-    margin: 5px;
-}
-
-.download-btn {
-    display: inline-block;
-    padding: 15px;
-    border: 2px solid #00FF41;
-    color: #00FF41;
-    text-decoration: none;
-    margin-top: 10px;
-}
-
-.red-seal-img { width: 80px; transition: 0.3s; }
-
-@keyframes redPulse {
-    0% { box-shadow: 0 0 5px #ff0000; transform: scale(1); }
-    50% { box-shadow: 0 0 25px #ff0000; transform: scale(1.1); }
-    100% { box-shadow: 0 0 5px #ff0000; transform: scale(1); }
-}
-
-.seal-active { animation: redPulse 0.5s ease-in-out; }
+/* MIU_33_CSS_MINIFIED */
+body{background:#000;color:#00FF41;font-family:'Courier New',monospace;margin:0;display:flex;font-size:1.1rem;line-height:1.6;-webkit-user-select:none;user-select:none;}
+.s-b{width:200px;height:100vh;border-right:2px solid #00FF41;padding:20px;position:fixed;}
+.m-c{margin-left:240px;padding:40px;width:100%;}
+.p-x{border:2px solid #BC13FE;padding:20px;background:rgba(0,0,0,0.8);transition:filter 0.3s ease;}
+.privacy-active{filter:blur(20px);pointer-events:none;}
+.btn-s{background:0 0;border:1px solid #00FF41;color:#00FF41;padding:10px;cursor:pointer;margin:5px;}
+.d-b{display:inline-block;padding:15px;border:2px solid #00FF41;color:#00FF41;text-decoration:none;margin-top:10px;}
+.r-s{width:80px;}
+@keyframes redPulse{0%{box-shadow:0 0 5px #f00;transform:scale(1)}50%{box-shadow:0 0 25px #f00;transform:scale(1.1)}100%{box-shadow:0 0 5px #f00;transform:scale(1)}}
+.seal-active{animation:redPulse .5s ease-in-out;}
