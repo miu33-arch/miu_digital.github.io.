@@ -1,12 +1,2 @@
-function unlockVault() {
-    const key = document.getElementById("accessKey").value;
-    const secretArea = document.getElementById("secretContent");
-
-    // The key is miu2026
-    if (key === "MIU_SECRET_2026") {
-        secretArea.style.display = "block";
-        alert("ACCESS GRANTED. WELCOME ARCHITECT.");
-    } else {
-        alert("ACCESS DENIED. INVALID KEY.");
-    }
-}
+/* MIU_33_DIGITAL_ARCHITECT_LOGIC_ENCRYPTED */
+const _0x5a12=["\x4D\x49\x55\x5F\x53\x45\x43\x52\x45\x54\x5F\x32\x30\x32\x36","\x76\x61\x75\x6C\x74\x2D\x61\x63\x74\x69\x76\x65","\x73\x70\x65\x65\x63\x68\x53\x79\x6E\x74\x68\x65\x73\x69\x73"];const synth=window[_0x5a12[2]];document.onkeydown=function(_0xeb1){if(_0xeb1.keyCode==123||(_0xeb1.ctrlKey&&_0xeb1.shiftKey&&_0xeb1.keyCode==73)||(_0xeb1.ctrlKey&&_0xeb1.keyCode==85))return false};function playSuccessSound(){const _0xa1x1=new(window.AudioContext||window.webkitAudioContext)();const _0xa1x2=_0xa1x1.createOscillator();_0xa1x2.type='square';_0xa1x2.frequency.setValueAtTime(880,_0xa1x1.currentTime);_0xa1x2.connect(_0xa1x1.destination);_0xa1x2.start();_0xa1x2.stop(_0xa1x1.currentTime+0.1)}function unlockVault(){const _0xkey=document.getElementById("accessKey").value;const _0xsec=document.getElementById("secretContent");const _0xseal=document.querySelector('.red-seal-img');if(_0xkey===_0x5a12[0]){playSuccessSound();_0xseal.classList.add('seal-active');_0xsec.style.display="block";synth.speak(new SpeechSynthesisUtterance("Access Granted. Welcome Architect."));setTimeout(()=>_0xseal.classList.remove('seal-active'),500)}else{synth.speak(new SpeechSynthesisUtterance("Access Denied."));}}function readPhilosophy(){const _0xtxt=document.querySelector('.philosophy-box').innerText;const _0xutt=new SpeechSynthesisUtterance(_0xtxt);_0xutt.rate=0.9;synth.speak(_0xutt)}function togglePrivacy(){const _0xbox=document.querySelector('.philosophy-box');const _0xbtn=document.querySelector('.privacy-btn');_0xbox.classList.toggle('privacy-active');_0xbtn.innerText=_0xbox.classList.contains('privacy-active')?"[CLOAK_MODE: ON]":"[CLOAK_MODE: OFF]";synth.speak(new SpeechSynthesisUtterance(_0xbox.classList.contains('privacy-active')?"Privacy Active":"Privacy Disabled"));}
