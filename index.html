@@ -5,67 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIU_33 | Digital Architect Console</title>
     <meta name="author" content="Anamy Padilla">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="terminal-root">
+<body>
 
     <nav class="sidebar">
-        <div class="brand">MIU_33</div>
+        <h2 class="sidebar-h2">MIU_33</h2>
+        <div class="sidebar-stamp">缪联睿</div>
+        <a href="#console">Console</a>
+        <a href="#security-vault">Security Vault</a>
         
-        <ul class="nav-links">
-            <li><a href="#console">_Console</a></li>
-            <li><a href="#security-vault">_Security_Vault</a></li>
-        </ul>
-
-        <div class="social-header">CONNECTIVITY_GATE</div>
-        <ul class="nav-links">
-            <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
-            <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
-            <li><a href="#" target="_blank">Rednote (小红书)</a></li>
-        </ul>
+        <div class="sidebar-stamp" style="margin-top: 30px;">CONNECTIVITY_GATE</div>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Rednote (小红书)</a>
     </nav>
 
-    <main class="console-interface">
+    <main class="main">
         <section id="console">
-            <h2>System Initialization</h2>
-            <div class="boot-log">
+            <h1 class="title">System Initialization</h1>
+            <div class="box">
                 <p>> Booting MIU_PROTON v3.3...</p>
-                <p>> Establishing digital architecture core...</p>
+                <p>> Establishing digital architecture core..</p>
                 <p>> Integrity check: PASSED</p>
                 <p>> Environment secure.</p>
             </div>
+
+            <div class="box" style="margin-top: 25px; border-color: #bc13fe; box-shadow: 0 0 12px rgba(188, 19, 254, 0.3);">
+                <p style="color: #bc13fe; font-weight: bold;">> [DATA_LOAD]: CORE_PHILOSOPHY</p>
+                <br>
+                <p>> [STATUS]: VISION LOADED...</p>
+                <p>Architecting digital ecosystems that merge industrial precision with human intuition.</p>
+                <br>
+                <p>> [STATUS]: LOGIC VERIFIED...</p>
+                <p>Every element has purpose. Every interaction has intention. Every system is built with clarity and honesty.</p>
+                <br>
+                <p>> [STATUS]: LEGACY INITIALIZED...</p>
+                <p>A signature that endures — the bridge between Western structural logic and Eastern symbolic depth.</p>
+            </div>
             
-            <div class="owner-card">
-                <h3>ANAMY PADILLA</h3>
-                <div class="red-seal">缪联睿</div>
-                <p class="pinyin">Miù Lián Ruì</p>
+            <div class="neon-stamp">
+                <div class="neon-name">ANAMY PADILLA</div>
+                <div class="neon-cn">缪联睿</div>
+                <div class="neon-pinyin">Miù Lián Ruì</div>
             </div>
         </section>
 
-        <section id="security-vault">
-            <h2>Security Vault</h2>
-            <div class="vault-interface">
+        <section id="security-vault" style="margin-top: 40px;">
+            <h1 class="title">Security Vault</h1>
+            <div class="box">
                 <p>Enter Access Key to Unlock Secret Mode:</p>
                 <input type="password" id="accessKey" placeholder="> Access Key">
-                <button onclick="unlockVault()" class="proton-button">Unlock</button>
+                <button onclick="unlockVault()">Unlock</button>
             </div>
 
-            <div id="secretContent" style="display: none;">
-                <div class="status-box proton-accent">
+            <div id="secretContent" style="display: none; margin-top: 20px;">
+                <div class="box" style="border-color: #bc13fe; color: #bc13fe;">
                     <p>> SECRET MODE: ACTIVE</p>
                     <p>> ENCRYPTED CHANNEL OPEN</p>
+                    <a href="mailto:miu.digital.studio@proton.me ?subject=MIU_33 Inquiry" style="color: #bc13fe; text-decoration: none; font-weight: bold;">
+                        [ ESTABLISH CONNECTION ]
+                    </a>
                 </div>
-                <p>Authentication successful. Access the Architect directly:</p>
-                
-                <a href="mailto:miu.digital.studio@proton.me?subject=MIU_33 Inquiry&body=Hello Anamy, I saw your work and would like to discuss a project." 
-                   class="contact-link">
-                    ESTABLISH CONNECTION
-                </a>
             </div>
+
+            <div class="seal-stamp">缪联睿</div>
         </section>
 
-        <footer class="legal-stamp">
-            <p>© ANAMY PADILLA | 缪联睿</p>
+        <footer class="footer-signature">
+            © ANAMY PADILLA | 缪联睿 | Miù Lián Ruì
         </footer>
     </main>
 
