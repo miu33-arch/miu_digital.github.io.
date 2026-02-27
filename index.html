@@ -3,61 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIU_33 | Console</title>
+    <title>MIU_33 | Digital Architect Console</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body oncontextmenu="return false;">
 
-    <nav class="s-b">
-        <h2 class="h2-m">MIU_33</h2>
-        <div class="st-m" aria-label="ID: MLR">缪联睿</div>
-        <a href="#c-0">Console</a>
-        <a href="#v-0">Vault</a>
+    <nav class="sidebar">
+        <h2 class="brand-id">MIU_33</h2>
+        <div class="translated-id" aria-label="ID: MLR">缪联睿</div>
         
-        <div class="st-m" style="margin-top: 30px;">GATE</div>
-        <a href="https://www.linkedin.com/in/miu-digital-architect/" target="_blank">LI</a>
-        <a href="https://www.facebook.com/share/18KYkL41JW/" target="_blank">FB</a>
-        <a href="https://www.xiaohongshu.com/user/profile/95449308409" target="_blank">RN</a>
-        <a href="https://www.tiktok.com/@miuproton" target="_blank">TK</a>
-    </nav>
-
-<main class="m-c">
-    <section id="home-hero">
-        <div class="hero-frame">
-            <img src="hero-init.jpg" alt="Miu Digital Architect System Init" class="main-hero-img">
-        </div>
-    </section>
-
-    <section id="c-0">
-        <div class="control-panel">
-            <button onclick="readPhilosophy()" class="btn-s">[AUDIO]</button>
-            <button onclick="togglePrivacy()" class="btn-s p-b">[CLOAK: OFF]</button>
-        </div>
-
-        <div class="p-x">
-            <p>> [L_0]: PHILOSOPHY</p>
-            <p>Architecting digital ecosystems with industrial precision.</p>
-            <p>A signature that endures — the bridge between Western structural logic and Eastern symbolic depth.</p>
-        </div>
-    </section>
-
-    <section class="identity-footer">
-        <div class="seal-container">
-            <span class="pinyin">Miù Lián Ruì</span>
-            <h3 class="hanzi">缪联睿</h3>
-            <img src="red-seal.png" alt="MLR Seal" class="r-s">
-        </div>
-    </section>
-
-    <section id="v-0" style="margin-top: 50px;">
-        <div class="v-t">
-            <input type="password" id="accessKey" placeholder="> Access Key">
-            <button onclick="unlockVault()" class="btn-s">GO</button>
+        <div class="nav-links">
+            <a href="#home-hero">> HOME</a>
+            <a href="#about-section">> ABOUT</a>
+            <a href="#v-0">> VAULT</a>
         </div>
        
-        <div id="secretContent" style="display:none;">
-            <p style="color: #BC13FE;">> SYSTEM_ACCESS: GRANTED</p>
-            <a id="cvDownload" href="Anamy_Padilla_CV.pdf" download class="d-b">[DOWNLOAD_LOGS]</a>
+        <div class="gate-label">GATE</div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/miu-digital-architect/" target="_blank">LI</a>
+            <a href="https://www.facebook.com/share/18KYkL41JW/" target="_blank">FB</a>
+            <a href="https://www.xiaohongshu.com/user/profile/95449308409" target="_blank">RN</a>
+            <a href="https://www.tiktok.com/@miuproton" target="_blank">TK</a>
         </div>
-    </section>
-</main>
+    </nav>
+
+    <main class="content-wrapper">
+        <section id="home-hero">
+            <div class="hero-container">
+                <img src="hero-init.jpg" alt="Miu Digital Architect Hero" class="hero-img">
+                <div class="scanline"></div>
+            </div>
+        </section>
+
+        <section id="console-panel">
+            <div class="control-bar">
+                <button onclick="readPhilosophy()" class="btn-terminal">[AUDIO_LOG]</button>
+                <button onclick="togglePrivacy()" class="btn-terminal p-b">[CLOAK: OFF]</button>
+            </div>
+            <div class="terminal-text">
+                <p class="cmd-line">> [L_0]: CORE_PHILOSOPHY</p>
+                <p>Architecting digital ecosystems with industrial precision.</p>
+                <p>A signature that endures — the bridge between Western structural logic and Eastern symbolic depth.</p>
+            </div>
+        </section>
+
+        <section id="about-section">
+            <div class="about-layout">
+                <div class="image-frame">
+                    <img src="about-miu.jpg" alt="Miu Digital Architect Workspace" class="about-img">
+                </div>
+                <div class="bio-content">
+                    <p class="cmd-line">> [L_1]: WORKSPACE_LOG</p>
+                    <p><strong>LOGIC ENGINE:</strong> Building resilient digital foundations through Logic and AI.</p>
+                    <p>Operating from the intersection of Finance and Digital Architecture, crafting systems that prioritize structural integrity and aesthetic clarity.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="seal-identity">
+            <div class="seal-box">
+                <span class="pinyin-label">Miù Lián Ruì</span>
+                <h3 class="chinese-name">缪联睿</h3>
+                <img src="red-seal.png" alt="Official Seal" class="hanko-seal">
+            </div>
+        </section>
+
+        <section id="v-0">
+            <div class="vault-interface">
+                <p class="cmd-line">> [L_2]: ENCRYPTED_VAULT</p>
+                <div class="input-group">
+                    <input type="password" id="accessKey" placeholder="Enter Access Key">
+                    <button onclick="unlockVault()" class="btn-terminal">UNLOCK</button>
+                </div>
+                <div id="secretContent" style="display:none;">
+                    <p class="granted">> ACCESS_GRANTED: LOGS_READY</p>
+                    <a id="cvDownload" href="Anamy_Padilla_CV.pdf" download class="download-link">[DOWNLOAD_CV.PDF]</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="vault.js"></script>
+</body>
+</html>
