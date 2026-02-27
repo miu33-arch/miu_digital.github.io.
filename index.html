@@ -4,58 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIU_33 | Digital Architect Console</title>
+    <link rel="icon" type="image/jpg" href="1000006995.jpg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body oncontextmenu="return false;">
 
     <nav class="sidebar">
         <h2 class="brand-id">MIU_33</h2>
-        <div class="translated-id" aria-label="ID: MLR">缪联睿</div>
+        <div class="translated-id">缪联睿</div>
         
-        <div class="nav-links">
+        <div class="gate-label">CONNECTIVITY_GATE</div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/miu-digital-architect/" target="_blank">LinkedIn</a>
+            <a href="https://www.facebook.com/share/18KYkL41JW/" target="_blank">Facebook</a>
+            <a href="https://www.xiaohongshu.com/user/profile/95449308409" target="_blank">Rednote</a>
+            <a href="https://www.tiktok.com/@miuproton" target="_blank">TikTok</a>
+        </div>
+
+        <div class="nav-links" style="margin-top: 40px;">
             <a href="#home-hero">> HOME</a>
             <a href="#about-section">> ABOUT</a>
             <a href="#v-0">> VAULT</a>
-        </div>
-       
-        <div class="gate-label">GATE</div>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/miu-digital-architect/" target="_blank">LI</a>
-            <a href="https://www.facebook.com/share/18KYkL41JW/" target="_blank">FB</a>
-            <a href="https://www.xiaohongshu.com/user/profile/95449308409" target="_blank">RN</a>
-            <a href="https://www.tiktok.com/@miuproton" target="_blank">TK</a>
         </div>
     </nav>
 
     <main class="content-wrapper">
         <section id="home-hero">
             <div class="hero-container">
-                <img src="hero-init.jpg" alt="Miu Digital Architect Hero" class="hero-img">
-                <div class="scanline"></div>
-            </div>
-        </section>
-
-        <section id="console-panel">
-            <div class="control-bar">
-                <button onclick="readPhilosophy()" class="btn-terminal">[AUDIO_LOG]</button>
-                <button onclick="togglePrivacy()" class="btn-terminal p-b">[CLOAK: OFF]</button>
-            </div>
-            <div class="terminal-text">
-                <p class="cmd-line">> [L_0]: CORE_PHILOSOPHY</p>
-                <p>Architecting digital ecosystems with industrial precision.</p>
-                <p>A signature that endures — the bridge between Western structural logic and Eastern symbolic depth.</p>
+                <img src="1000006978.png" alt="System Init" class="hero-img">
             </div>
         </section>
 
         <section id="about-section">
             <div class="about-layout">
                 <div class="image-frame">
-                    <img src="about-miu.jpg" alt="Miu Digital Architect Workspace" class="about-img">
+                    <img src="1000006967.jpg" alt="Workspace" class="about-img">
                 </div>
                 <div class="bio-content">
                     <p class="cmd-line">> [L_1]: WORKSPACE_LOG</p>
-                    <p><strong>LOGIC ENGINE:</strong> Building resilient digital foundations through Logic and AI.</p>
-                    <p>Operating from the intersection of Finance and Digital Architecture, crafting systems that prioritize structural integrity and aesthetic clarity.</p>
+                    <p><strong>LOGIC ENGINE:</strong> Building resilient digital foundations.</p>
+                    <p>Based on expertise in Finance and Architecture, crafting systems with industrial precision.</p>
                 </div>
             </div>
         </section>
@@ -76,11 +64,23 @@
                     <button onclick="unlockVault()" class="btn-terminal">UNLOCK</button>
                 </div>
                 <div id="secretContent" style="display:none;">
-                    <p class="granted">> ACCESS_GRANTED: LOGS_READY</p>
-                    <a id="cvDownload" href="Anamy_Padilla_CV.pdf" download class="download-link">[DOWNLOAD_CV.PDF]</a>
+                    <p style="color:var(--terminal);">> ACCESS_GRANTED</p>
+                    <p style="color:#666;">[FILE_RECOVERY: CV_PENDING]</p>
                 </div>
             </div>
         </section>
+
+        <footer class="terminal-footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>© 2026 ANAMY PADILLA | 缪联睿</p>
+                    <p class="status-msg">> STATUS: SYSTEM_ONLINE</p>
+                </div>
+                <div class="footer-right">
+                    <p>miu_Digital Architect Studio</p>
+                </div>
+            </div>
+        </footer>
     </main>
 
     <script src="vault.js"></script>
