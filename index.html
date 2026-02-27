@@ -21,35 +21,43 @@
         <a href="https://www.tiktok.com/@miuproton" target="_blank">TK</a>
     </nav>
 
-    <main class="m-c">
-        <section id="c-0">
-            <div class="control-panel">
-                <button onclick="readPhilosophy()" class="btn-s">[AUDIO]</button>
-                <button onclick="togglePrivacy()" class="btn-s p-b">[CLOAK: OFF]</button>
-            </div>
+<main class="m-c">
+    <section id="home-hero">
+        <div class="hero-frame">
+            <img src="hero-init.jpg" alt="Miu Digital Architect System Init" class="main-hero-img">
+        </div>
+    </section>
 
-            <div class="p-x">
-                <p>> [L_0]: PHILOSOPHY</p>
-                <p>Architecting digital ecosystems with industrial precision.</p>
-                <p>A signature that endures — the bridge between Western structural logic and Eastern symbolic depth.</p>
-            </div>
-        </section>
+    <section id="c-0">
+        <div class="control-panel">
+            <button onclick="readPhilosophy()" class="btn-s">[AUDIO]</button>
+            <button onclick="togglePrivacy()" class="btn-s p-b">[CLOAK: OFF]</button>
+        </div>
 
-        <section id="v-0" style="margin-top: 50px;">
-            <div class="v-t">
-                <input type="password" id="accessKey" placeholder="> Access Key">
-                <button onclick="unlockVault()" class="btn-s">GO</button>
-            </div>
-            
-            <div id="secretContent" style="display:none;">
-                <p style="color: #BC13FE;">> SYSTEM_ACCESS: GRANTED</p>
-                <a id="cvDownload" href="Anamy_Padilla_CV.pdf" download class="d-b">[DOWNLOAD_LOGS]</a>
-            </div>
+        <div class="p-x">
+            <p>> [L_0]: PHILOSOPHY</p>
+            <p>Architecting digital ecosystems with industrial precision.</p>
+            <p>A signature that endures — the bridge between Western structural logic and Eastern symbolic depth.</p>
+        </div>
+    </section>
 
-            <img src="red-seal.png" alt="MLR" class="r-s">
-        </section>
-    </main>
+    <section class="identity-footer">
+        <div class="seal-container">
+            <span class="pinyin">Miù Lián Ruì</span>
+            <h3 class="hanzi">缪联睿</h3>
+            <img src="red-seal.png" alt="MLR Seal" class="r-s">
+        </div>
+    </section>
 
-    <script src="vault.js"></script>
-</body>
-</html>
+    <section id="v-0" style="margin-top: 50px;">
+        <div class="v-t">
+            <input type="password" id="accessKey" placeholder="> Access Key">
+            <button onclick="unlockVault()" class="btn-s">GO</button>
+        </div>
+       
+        <div id="secretContent" style="display:none;">
+            <p style="color: #BC13FE;">> SYSTEM_ACCESS: GRANTED</p>
+            <a id="cvDownload" href="Anamy_Padilla_CV.pdf" download class="d-b">[DOWNLOAD_LOGS]</a>
+        </div>
+    </section>
+</main>
