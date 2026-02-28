@@ -3,73 +3,32 @@
     --terminal: #00ff41;
 }
 
-body {
-    background-color: #000;
-    color: #e0e0e0;
-    font-family: 'Courier New', monospace;
-    margin: 0;
-    display: flex;
-}
+body { background: #000; color: #e0e0e0; font-family: 'Courier New', monospace; margin: 0; display: flex; }
 
-/* Sidebar Styling */
-.sidebar {
-    width: 220px;
-    height: 100vh;
-    border-right: 1px solid var(--terminal);
-    padding: 30px;
-    position: fixed;
-    background: #000;
-}
+/* Sidebar Layout */
+.sidebar { width: 220px; height: 100vh; border-right: 1px solid var(--terminal); padding: 30px; position: fixed; }
+.translated-id { color: var(--accent); margin-bottom: 20px; font-size: 1.2rem; }
+.gate-label { color: var(--terminal); font-size: 0.7rem; margin-top: 15px; letter-spacing: 2px; }
 
-.brand-id { color: #fff; margin: 0; }
-.translated-id { color: var(--accent); margin-bottom: 20px; }
-
-.gate-label { color: var(--terminal); font-size: 0.7rem; margin-top: 20px; letter-spacing: 2px; }
-
-.social-links a, .nav-links a {
-    display: block;
-    color: var(--terminal);
-    text-decoration: none;
-    margin: 10px 0;
-    font-size: 0.85rem;
-}
-
-.social-links a:hover, .nav-links a:hover {
-    color: #fff;
-    text-shadow: 0 0 5px var(--terminal);
-}
+/* Navigation Links */
+.nav-links a, .social-links a { display: block; color: var(--terminal); text-decoration: none; margin: 10px 0; font-size: 0.85rem; }
+.nav-links a:hover, .social-links a:hover { color: #fff; text-shadow: 0 0 5px var(--terminal); }
 
 /* Main Content */
-.content-wrapper { margin-left: 280px; padding: 60px; max-width: 900px; }
+.content-wrapper { margin-left: 280px; padding: 60px; max-width: 900px; transition: filter 0.3s ease; }
+.hero-img, .about-img { width: 100%; border: 1px solid #333; display: block; margin-bottom: 40px; }
+.about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 60px 0; }
 
-.hero-img, .about-img { width: 100%; border: 1px solid #333; display: block; }
+/* Control Panel Buttons */
+.control-bar { margin: 20px 0; display: flex; gap: 15px; }
+.btn-terminal { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 8px 15px; cursor: pointer; font-family: inherit; font-size: 0.8rem; }
+.btn-terminal:hover { background: var(--accent); color: #000; }
 
-.about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 80px 0; }
+/* Red Identity Stamp */
+.chinese-name { color: #B22222; font-size: 2.8rem; margin: 10px 0; font-family: serif; }
+.hanko-seal { width: 60px; }
 
-/* RED CHINESE NAME */
-.chinese-name { 
-    color: #B22222; 
-    font-size: 2.8rem; 
-    margin: 10px 0; 
-}
-
-.hanko-seal { width: 55px; margin-top: 10px; }
-
-.btn-terminal {
-    background: transparent;
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    padding: 5px 15px;
-    cursor: pointer;
-}
-
-/* Footer */
-.terminal-footer {
-    margin-top: 100px;
-    border-top: 1px solid var(--terminal);
-    padding: 20px 0;
-    font-size: 0.75rem;
-}
-
+/* Footer Styling */
+.terminal-footer { margin-top: 100px; border-top: 1px solid var(--terminal); padding: 20px 0; font-size: 0.75rem; }
 .footer-content { display: flex; justify-content: space-between; }
-.status-msg { color: var(--terminal); }
+.status-msg { color: var(--terminal); font-weight: bold; }
