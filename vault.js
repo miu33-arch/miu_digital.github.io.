@@ -25,3 +25,17 @@ function togglePrivacy() {
         btn.innerText = '[CLOAK: ON]';
     }
 }
+
+function playAboutAudio() {
+    const audio = document.getElementById("aboutAudio");
+    const btn = document.querySelector('.id-audio-btn');
+
+    if (audio.paused) {
+        audio.play();
+        btn.innerText = '[AUDIO: PLAYING]';
+    } else {
+        audio.pause();
+        audio.currentTime = 0;
+        btn.innerText = '[ABOUT_AUDIO]';
+    }
+}
