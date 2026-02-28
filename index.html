@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIU_33 | Digital Architect Console</title>
-    <link rel="icon" type="image/jpg" href="WhatsApp%20Image%202026-02-28%20at%202.42.24%20AM%20(1).jpeg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body oncontextmenu="return false;">
 
     <nav class="sidebar">
         <div class="status-indicator">
             <span class="pulse"></span> ONLINE_NODE: RIYADH
         </div>
+
         <h2 class="brand-id">MIU_33</h2>
         <div class="translated-id">缪联睿</div>
-        
+
         <div class="gate-label">CONNECTIVITY_GATE</div>
+
         <div class="social-links">
             <a href="https://www.linkedin.com/in/miu-digital-architect/" target="_blank">LinkedIn</a>
             <a href="https://www.facebook.com/share/18KYkL41JW/" target="_blank">Facebook</a>
@@ -32,6 +38,8 @@
     </nav>
 
     <main class="content-wrapper">
+
+        <!-- HERO SECTION -->
         <section id="home-hero">
             <div class="terminal-box animated-text">
                 <p class="type-line">> Booting MIU_STUDIO_v3.3...</p>
@@ -39,7 +47,11 @@
                 <p class="type-line">> Integrity check: PASSED</p>
                 <p class="type-line">> Environment: SECURE. Welcome, 缪联睿.</p>
             </div>
-            <img src="WhatsApp%20Image%202026-02-28%20at%202.41.24%20AM.jpeg" alt="System Init" class="hero-img">
+
+            <!-- Correct hero image -->
+            <img src="WhatsApp%20Image%202026-02-28%20at%202.40.24%20AM%20(2).jpeg"
+                 alt="System Init"
+                 class="hero-img">
         </section>
 
         <div class="control-bar">
@@ -47,10 +59,16 @@
             <button onclick="togglePrivacy()" class="btn-terminal p-b">[CLOAK: OFF]</button>
         </div>
 
+        <!-- ABOUT SECTION -->
         <section id="about-section" class="about-layout">
             <div class="image-frame">
-                <img src="WhatsApp%20Image%202026-02-28%20at%202.41.24%20AM%20(1).jpeg" alt="Workspace Log" class="about-img">
+
+                <!-- Correct about-me image -->
+                <img src="WhatsApp%20Image%202026-02-28%20at%202.40.24%20AM%20(1).jpeg"
+                     alt="Workspace Log"
+                     class="about-img">
             </div>
+
             <div class="bio-content">
                 <p class="cmd-line">> [L_1]: WORKSPACE_LOG</p>
                 <p><strong>LOGIC ENGINE:</strong> Building resilient digital foundations through Logic and AI.</p>
@@ -58,6 +76,7 @@
             </div>
         </section>
 
+        <!-- SEAL -->
         <section class="seal-identity">
             <div class="seal-box">
                 <span class="pinyin-label">Miù Lián Ruì</span>
@@ -66,29 +85,35 @@
             </div>
         </section>
 
+        <!-- VAULT -->
         <section id="v-0" class="vault-interface">
             <p class="cmd-line">> [L_2]: ENCRYPTED_VAULT</p>
+
             <div class="input-group">
                 <input type="password" id="accessKey" placeholder="Enter Access Key">
                 <button onclick="unlockVault()" class="btn-terminal">UNLOCK</button>
             </div>
+
             <div id="secretContent" style="display:none;">
                 <p class="granted">> ACCESS_GRANTED</p>
                 <p style="color:#666;">[FILE_RECOVERY: CV_LOGS_PENDING]</p>
             </div>
         </section>
 
+        <!-- FOOTER -->
         <footer class="terminal-footer">
             <div class="footer-content">
                 <div class="footer-left">
                     <p>© 2026 ANAMY PADILLA | 缪联睿</p>
                     <p class="status-msg">> STATUS: SYSTEM_ONLINE</p>
                 </div>
+
                 <div class="footer-right">
                     <p>miu_Digital Architect Studio</p>
                 </div>
             </div>
         </footer>
+
     </main>
 
     <script src="vault.js"></script>
