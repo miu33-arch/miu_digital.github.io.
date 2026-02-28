@@ -1,8 +1,7 @@
 function unlockVault() {
     const key = document.getElementById('accessKey').value;
     const content = document.getElementById('secretContent');
-    // Your password is: miu2026
-    if (key === 'miu2026') {
+    if (key === 'archmiu2026') {
         content.style.display = 'block';
     } else {
         alert('SYSTEM_ERROR: Unauthorized Access');
