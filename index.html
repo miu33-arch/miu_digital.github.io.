@@ -10,6 +10,9 @@
 <body oncontextmenu="return false;">
 
     <nav class="sidebar">
+        <div class="status-indicator">
+            <span class="pulse"></span> ONLINE_NODE: RIYADH
+        </div>
         <h2 class="brand-id">MIU_33</h2>
         <div class="translated-id">缪联睿</div>
         
@@ -21,7 +24,7 @@
             <a href="https://www.tiktok.com/@miuproton" target="_blank">TikTok</a>
         </div>
 
-        <div class="nav-links" style="margin-top: 40px;">
+        <div class="nav-links">
             <a href="#home-hero">> HOME</a>
             <a href="#about-section">> ABOUT</a>
             <a href="#v-0">> VAULT</a>
@@ -30,28 +33,28 @@
 
     <main class="content-wrapper">
         <section id="home-hero">
-            <div class="hero-container">
-                <img src="WhatsApp Image 2026-02-28 at 2.41.24 AM.jpeg" alt="System Init" class="hero-img">
+            <div class="terminal-box animated-text">
+                <p class="type-line">> Booting MIU_STUDIO_v3.3...</p>
+                <p class="type-line">> Location: RIYADH_NODE_ACTIVE</p>
+                <p class="type-line">> Integrity check: PASSED</p>
+                <p class="type-line">> Environment: SECURE. Welcome, 缪联睿.</p>
             </div>
+            <img src="WhatsApp Image 2026-02-28 at 2.41.24 AM.jpeg" alt="System Init" class="hero-img">
         </section>
 
-        <section id="console-panel">
-            <div class="control-bar">
-                <button onclick="readPhilosophy()" class="btn-terminal">[AUDIO_LOG]</button>
-                <button onclick="togglePrivacy()" class="btn-terminal p-b">[CLOAK: OFF]</button>
-            </div>
-        </section>
+        <div class="control-bar">
+            <button onclick="readPhilosophy()" class="btn-terminal">[AUDIO_LOG]</button>
+            <button onclick="togglePrivacy()" class="btn-terminal p-b">[CLOAK: OFF]</button>
+        </div>
 
-        <section id="about-section">
-            <div class="about-layout">
-                <div class="image-frame">
-                    <img src="WhatsApp Image 2026-02-28 at 2.41.24 AM (1).jpeg" alt="Workspace Log" class="about-img">
-                </div>
-                <div class="bio-content">
-                    <p class="cmd-line">> [L_1]: WORKSPACE_LOG</p>
-                    <p><strong>LOGIC ENGINE:</strong> Building resilient digital foundations through Logic and AI.</p>
-                    <p>Operating from Riyadh, crafting systems that prioritize structural integrity and aesthetic clarity.</p>
-                </div>
+        <section id="about-section" class="about-layout">
+            <div class="image-frame">
+                <img src="WhatsApp Image 2026-02-28 at 2.41.24 AM (1).jpeg" alt="Workspace Log" class="about-img">
+            </div>
+            <div class="bio-content">
+                <p class="cmd-line">> [L_1]: WORKSPACE_LOG</p>
+                <p><strong>LOGIC ENGINE:</strong> Building resilient digital foundations through Logic and AI.</p>
+                <p>Operating from Riyadh, crafting systems that prioritize structural integrity and aesthetic clarity.</p>
             </div>
         </section>
 
@@ -63,17 +66,15 @@
             </div>
         </section>
 
-        <section id="v-0">
-            <div class="vault-interface">
-                <p class="cmd-line">> [L_2]: ENCRYPTED_VAULT</p>
-                <div class="input-group">
-                    <input type="password" id="accessKey" placeholder="Enter Access Key">
-                    <button onclick="unlockVault()" class="btn-terminal">UNLOCK</button>
-                </div>
-                <div id="secretContent" style="display:none;">
-                    <p style="color:var(--terminal);">> ACCESS_GRANTED</p>
-                    <p style="color:#666;">[RECOVERY: CV_PENDING]</p>
-                </div>
+        <section id="v-0" class="vault-interface">
+            <p class="cmd-line">> [L_2]: ENCRYPTED_VAULT</p>
+            <div class="input-group">
+                <input type="password" id="accessKey" placeholder="Enter Access Key">
+                <button onclick="unlockVault()" class="btn-terminal">UNLOCK</button>
+            </div>
+            <div id="secretContent" style="display:none;">
+                <p class="granted">> ACCESS_GRANTED</p>
+                <p style="color:#666;">[FILE_RECOVERY: CV_PENDING]</p>
             </div>
         </section>
 
