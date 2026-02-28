@@ -67,6 +67,13 @@ body {
     transition: filter 0.3s ease;
 }
 
+/* HERO IMAGE */
+.hero-img {
+    width: 100%;
+    border: 1px solid #333;
+    margin-bottom: 40px;
+}
+
 /* TERMINAL BOX */
 .terminal-box {
     border: 1px solid var(--terminal);
@@ -167,7 +174,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* AUDIO BUTTON */
+/* AUDIO BUTTON INSIDE PANEL */
 .id-audio-btn {
     margin-top: 12px;
     width: 100%;
@@ -211,3 +218,4 @@ body {
 .status-msg {
     color: var(--terminal);
 }
+
