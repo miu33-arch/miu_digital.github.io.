@@ -39,3 +39,23 @@ function playAboutAudio() {
         btn.innerText = '[ABOUT_AUDIO]';
     }
 }
+function playAboutAudio() {
+    const btn = document.querySelector('.id-audio-btn');
+
+    const text = `
+    MIU Digital Architect Studio stands at the intersection of architecture and advanced digital technology.
+    We design environments where physical structures and digital systems merge into a single intelligent ecosystem.
+    Our work transforms static spaces into dynamic, data-driven experiences powered by holography, AI, and spatial computing.
+    This is the Architecture of Possibility.
+    `;
+
+    const msg = new SpeechSynthesisUtterance(text);
+
+    btn.innerText = '[AUDIO: PLAYING]';
+
+    msg.onend = () => {
+        btn.innerText = '[ABOUT_AUDIO]';
+    };
+
+    window.speechSynthesis.speak(msg);
+}
