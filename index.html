@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIU_33 | Digital Architect Console</title>
 
-    <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="favicon.jpeg">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -49,9 +47,7 @@
                 <p class="type-line">> Environment: SECURE. Welcome, 缪联睿.</p>
             </div>
 
-            <img src="WhatsApp%20Image%202026-02-28%20at%205.46.54%20AM.jpeg"
-                 alt="System Init"
-                 class="hero-img">
+            <img src="hero.jpeg" alt="System Init" class="hero-img">
         </section>
 
         <!-- CONTROL BAR -->
@@ -62,16 +58,23 @@
 
         <!-- ABOUT SECTION -->
         <section id="about-section" class="about-layout">
-            <div class="image-frame">
-                <img src="WhatsApp%20Image%202026-02-28%20at%202.40.24%20AM%20(1).jpeg"
-                     alt="Workspace Log"
-                     class="about-img">
+
+            <!-- IDENTITY PANEL -->
+            <div class="identity-panel">
+                <img src="profile-photo.jpeg" class="identity-img" alt="Digital Architect Identity">
+                <div class="identity-label">miu_Digital Architect Studio</div>
+
+                <button onclick="playAboutAudio()" class="btn-terminal id-audio-btn">[ABOUT_AUDIO]</button>
+                <audio id="aboutAudio" src="about.mp3"></audio>
             </div>
 
+            <!-- BIOGRAPHY -->
             <div class="bio-content">
                 <p class="cmd-line">> [L_1]: WORKSPACE_LOG</p>
 
                 <h3>势 | Bridging Physical Space and Digital Vision</h3>
+
+                <div class="studio-badge">MIU_Digital Architect Studio</div>
 
                 <p><strong>MIU_Digital Architect Studio</strong> stands at the intersection of architecture and advanced digital technology. We design environments where physical structures and digital systems merge into a single intelligent ecosystem.</p>
 
@@ -85,15 +88,6 @@
 
                 <p><em>This is the future of design.<br>
                 This is the Architecture of Possibility.</em></p>
-            </div>
-        </section>
-
-        <!-- SEAL -->
-        <section class="seal-identity">
-            <div class="seal-box">
-                <span class="pinyin-label">Miù Lián Ruì</span>
-                <h3 class="chinese-name">缪联睿</h3>
-                <img src="red-seal.png" alt="Official Seal" class="hanko-seal">
             </div>
         </section>
 
