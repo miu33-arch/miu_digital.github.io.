@@ -207,15 +207,51 @@ body {
     box-shadow: 0 0 10px var(--accent);
 }
 
-/* FOOTER */
-.terminal-footer {
-    margin-top: 100px;
-    border-top: 1px solid var(--terminal);
-    padding: 20px 0;
-    font-size: 0.75rem;
+/* SERVICES LIST */
+.service-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
 }
 
-.status-msg {
-    color: var(--terminal);
+.service-list li {
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    border-left: 2px solid var(--accent);
+    background: rgba(188, 19, 254, 0.08);
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
+.service-list button {
+    margin-left: 10px;
+    font-size: 0.7rem;
+}
+
+/* PROJECT ITEMS */
+.project-item {
+    border: 1px solid var(--terminal);
+    padding: 20px;
+    margin-bottom: 25px;
+    background: rgba(0, 255, 65, 0.04);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.15);
+}
+
+.project-item h4 {
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.project-item h4:hover {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent);
+    transition: 0.2s ease;
+}
+
+.project-hidden {
+    display: none;
+    margin-top: 10px;
+    padding: 15px;
+    border-top: 1px solid var(--
