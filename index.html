@@ -10,10 +10,24 @@
 <body oncontextmenu="return false;">
 
     <nav class="sidebar">
-        <div class="status-indicator"><span class="pulse"></span> ONLINE_NODE: RIYADH</div>
+        <div class="status-indicator">
+            <div><span class="pulse"></span> ONLINE_NODE: RIYADH</div>
+            <div id="backend-status" style="margin-top: 5px; opacity: 0.6; font-size: 0.6rem;">
+                <span class="pulse" style="background: orange;"></span> GATEWAY: INITIALIZING...
+            </div>
+        </div>
+        
         <h2 class="brand-id">MIU_33</h2>
         <div class="translated-id">缪联睿</div>
-        <div class="nav-links">
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/miu-digital-architect/" target="_blank">LinkedIn</a>
+            <a href="https://www.facebook.com/share/18KYkL41JW/" target="_blank">Facebook</a>
+            <a href="https://www.xiaohongshu.com/user/profile/95449308409" target="_blank">Rednote</a>
+            <a href="https://www.tiktok.com/@miuproton" target="_blank">TikTok</a>
+        </div>
+
+        <div class="nav-links" style="margin-top: 30px;">
             <a href="#home-hero">> HOME</a>
             <a href="#about-section">> ABOUT</a>
             <a href="#services-section">> SERVICES</a>
@@ -31,10 +45,7 @@
                 <p class="type-line">> Integrity check: PASSED</p>
                 <p class="type-line">> Welcome, 缪联睿.</p>
             </div>
-            <h2 style="color:var(--accent); margin-bottom:20px;">
-                Intelligent spaces where architecture, AI, and identity merge.
-            </h2>
-            <img src="WhatsApp Image 2026-02-28 at 11.19.33 PM.jpeg" alt="System Init" class="hero-img">
+            <img src="WhatsApp Image 2026-02-28 at 11.19.33 PM.jpeg" class="hero-img">
         </section>
 
         <div class="control-bar" style="margin-bottom: 30px;">
@@ -44,42 +55,45 @@
 
         <section id="about-section" class="about-layout">
             <div class="identity-panel">
-                <img src="Copilot_20260301_000046.png" class="identity-img" alt="Identity">
+                <img src="Copilot_20260301_000046.png" class="identity-img">
                 <div class="identity-label">miu_Digital Architect Studio</div>
                 <button onclick="playAboutAudio()" class="btn-terminal id-audio-btn">[ABOUT_AUDIO]</button>
             </div>
             <div class="bio-content">
                 <p class="cmd-line">> [L_1]: WORKSPACE_LOG</p>
                 <h3>势 | Bridging Physical Space and Digital Vision</h3>
-                <p>We transform static spaces into dynamic, data-driven ecosystems powered by AI and spatial computing.</p>
+                <p>We transform static spaces into dynamic, data-driven experiences.</p>
                 <div class="studio-badge">MIU_Digital Architect Studio</div>
             </div>
         </section>
 
         <section id="services-section" class="vault-interface">
             <p class="cmd-line">> [L_1B]: SERVICE_PROTOCOLS</p>
-            <h3>服务 | Intelligent Systems</h3>
             <ul class="service-list" style="list-style:none; padding:0;">
-                <li style="margin-bottom:15px;">
-                    <strong>AI-Driven Spatial Design</strong>
-                    <button class="btn-terminal" onclick="playServiceAudio('AI Driven Spatial Design protocol initiated.', this)">[AUDIO_LOG]</button>
+                <li style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                    AI-Driven Spatial Design <button class="btn-terminal" onclick="playServiceAudio('AI protocol initiated.', this)">[AUDIO_LOG]</button>
                 </li>
-                <li style="margin-bottom:15px;">
-                    <strong>Digital Architecture Systems</strong>
-                    <button class="btn-terminal" onclick="playServiceAudio('Digital Architecture Systems activated.', this)">[AUDIO_LOG]</button>
+                <li style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                    Digital Architecture Systems <button class="btn-terminal" onclick="playServiceAudio('Systems activated.', this)">[AUDIO_LOG]</button>
+                </li>
+                <li style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                    Identity-Based Design <button class="btn-terminal" onclick="playServiceAudio('Identity mapping online.', this)">[AUDIO_LOG]</button>
+                </li>
+                <li style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                    Security-Aware Systems <button class="btn-terminal" onclick="playServiceAudio('Security layers engaged.', this)">[AUDIO_LOG]</button>
+                </li>
+                <li style="display:flex; justify-content:space-between; margin-bottom:10px;">
+                    Computational Prototyping <button class="btn-terminal" onclick="playServiceAudio('Computational run.', this)">[AUDIO_LOG]</button>
                 </li>
             </ul>
         </section>
 
         <section id="projects-section" class="vault-interface">
             <p class="cmd-line">> [L_2B]: PROJECT_ARCHIVE</p>
-            <div class="project-item">
-                <h4 onclick="toggleProject('p1')" style="cursor:pointer; color:var(--terminal);">[+] Adaptive Identity Pavilion</h4>
-                <div id="p1" style="display:none; padding:15px; border-left: 1px solid var(--accent);">
-                    <p>A responsive pavilion shifting form based on identity patterns.</p>
-                    <button class="btn-terminal" onclick="playServiceAudio('Project Node P1: Adaptive Identity Pavilion.', this)">[AUDIO_LOG]</button>
-                </div>
-            </div>
+            <div class="project-item"><h4 onclick="toggleProject('p1')">[+] Adaptive Identity Pavilion</h4><div id="p1" style="display:none; padding:10px;">P1: Morphology Protocol Active.</div></div>
+            <div class="project-item"><h4 onclick="toggleProject('p2')">[+] Neural Urban Scanner</h4><div id="p2" style="display:none; padding:10px;">P2: City Intel Protocol Active.</div></div>
+            <div class="project-item"><h4 onclick="toggleProject('p3')">[+] Digital Twin for Cultural Spaces</h4><div id="p3" style="display:none; padding:10px;">P3: Simulacrum Protocol Active.</div></div>
+            <div class="project-item"><h4 onclick="toggleProject('p4')">[+] Sentient Interior System</h4><div id="p4" style="display:none; padding:10px;">P4: Habitat Autonomy Protocol Active.</div></div>
         </section>
 
         <section id="contact-section" class="vault-interface">
@@ -87,7 +101,7 @@
             <form id="contact-form" style="display:flex; flex-direction:column; gap:10px; max-width:450px;">
                 <input type="text" id="name" placeholder="IDENT_NAME" required class="btn-terminal" style="text-align:left;">
                 <input type="email" id="email" placeholder="SECURE_EMAIL" required class="btn-terminal" style="text-align:left;">
-                <textarea id="message" placeholder="MESSAGE_DATA_PACKET" required class="btn-terminal" style="text-align:left; height:100px;"></textarea>
+                <textarea id="message" placeholder="MESSAGE_DATA_PACKET" required class="btn-terminal" style="text-align:left; height:80px;"></textarea>
                 <button type="submit" class="btn-terminal">[TRANSMIT_DATA]</button>
                 <p id="status" style="font-size:0.75rem; color:var(--terminal); margin-top:10px;"></p>
             </form>
@@ -95,12 +109,11 @@
 
         <section id="v-0" class="vault-interface">
             <p class="cmd-line">> [L_2]: ENCRYPTED_VAULT</p>
-            <div class="input-group">
-                <input type="password" id="accessKey" placeholder="Enter Access Key" class="btn-terminal" style="text-align:left;">
-                <button onclick="unlockVault()" class="btn-terminal">UNLOCK</button>
-            </div>
-            <div id="secretContent" style="display:none; margin-top:20px;">
-                <p style="color:var(--terminal);">> ACCESS_GRANTED: Welcome Architect.</p>
+            <input type="password" id="accessKey" placeholder="Enter Access Key" class="btn-terminal">
+            <button onclick="unlockVault()" class="btn-terminal">UNLOCK</button>
+            <div id="secretContent" style="display:none; margin-top:20px; border-top:1px dashed var(--terminal); padding-top:20px;">
+                <p class="cmd-line">> [LOG_RECOVERY_COMPLETE]</p>
+                <div id="dossier-text" style="font-size:0.8rem; line-height:1.6; color:#aaa;"></div>
             </div>
         </section>
 
