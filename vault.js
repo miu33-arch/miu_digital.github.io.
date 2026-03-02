@@ -1,136 +1,83 @@
-// --- BOOT SEQUENCE ---
+// --- MIU_33 CONTACT GATEWAY PROTOCOL ---
+const BACKEND_URL = 'https://miu-backend.onrender.com/contact';
+const FORM_STORAGE_KEY = 'miu_contact_draft';
+
+// --- AUTO-SAVE LOGIC (Preserving Input) ---
+function saveDraft() {
+    const draft = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+    localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify(draft));
+}
+
+function loadDraft() {
+    const saved = localStorage.getItem(FORM_STORAGE_KEY);
+    if (saved) {
+        const draft = JSON.parse(saved);
+        document.getElementById('name').value = draft.name || '';
+        document.getElementById('email').value = draft.email || '';
+        document.getElementById('message').value = draft.message || '';
+        console.log("> MIU_SYSTEM: Contact draft restored from local cache.");
+    }
+}
+
+// --- SERVER STATUS PROTOCOL ---
+async function checkServerStatus() {
+    const statusEl = document.getElementById('backend-status');
+    try {
+        // Options check to see if the gateway is reachable
+        await fetch(BACKEND_URL, { method: 'OPTIONS' });
+        statusEl.innerHTML = `<span class="pulse" style="background: var(--terminal);"></span> GATEWAY: ACTIVE`;
+    } catch (err) { 
+        statusEl.innerHTML = `<span class="pulse" style="background: red;"></span> GATEWAY: OFFLINE`; 
+    }
+}
+
+// --- INITIALIZATION ---
 window.addEventListener('load', () => {
-    const overlay = document.getElementById('boot-overlay');
-    setTimeout(() => {
-        overlay.style.opacity = '0';
-        setTimeout(() => { overlay.style.display = 'none'; }, 1000);
-    }, 2500);
+    checkServerStatus();
+    loadDraft();
+    
+    // Attach real-time listeners for the Auto-Save feature
+    const fields = ['name', 'email', 'message'];
+    fields.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.addEventListener('input', saveDraft);
+        }
+    });
 });
 
-// --- VAULT DECRYPTION ---
-function unlockVault() {
-    const key = document.getElementById('accessKey').value;
-    const content = document.getElementById('secretContent');
-    // Key based on miu_Digital Architect Persona
-    if (key === 'archmiu2026' || key === 'MIU_33') {
-        content.style.display = 'block';
-        startDossierTyping();
-    } else { alert('SYSTEM_ERROR: Unauthorized Access'); }
-}
+// --- DATA TRANSMISSION PROTOCOL ---
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const status = document.getElementById('status');
+    status.textContent = '> INITIALIZING_TRANSMISSION...';
 
-function startDossierTyping() {
-    const text = `IDENTITY_DOSSIER: ANAMY PADILLA\nEDUCATION: BSBA FINANCE | BS NURSING\nEXPERIENCE: RN RIYADH NODE (EXIT: 2026.02.02)\nSTATUS: FOUNDER @ MIU_DIGITAL ARCHITECT STUDIO\nOBJECTIVE: BRIDGE PHYSICAL & DIGITAL ECOSYSTEMS.`;
-    const target = document.getElementById('dossier-text');
-    target.innerHTML = "";
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            target.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
-            i++;
-            setTimeout(type, 35);
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+
+    try {
+        const res = await fetch(BACKEND_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        if (res.ok) {
+            status.textContent = '> DATA_TRANSMITTED_SUCCESSFULLY.';
+            localStorage.removeItem(FORM_STORAGE_KEY); // Wipe draft after success
+            document.getElementById('contact-form').reset();
+        } else {
+            status.textContent = '> ERROR: SERVER_REJECTED_PACKET.';
         }
+    } catch (err) {
+        status.textContent = '> ERROR: CONNECTION_TIMEOUT. DRAFT_SAVED_LOCALLY.';
     }
-    type();
-}
-// --- BOOT SEQUENCE ---
-window.addEventListener('load', () => {
-    const overlay = document.getElementById('boot-overlay');
-    setTimeout(() => {
-        overlay.style.opacity = '0';
-        setTimeout(() => { overlay.style.display = 'none'; }, 1000);
-    }, 2500);
 });
 
-// --- VAULT DECRYPTION ---
-function unlockVault() {
-    const key = document.getElementById('accessKey').value;
-    const content = document.getElementById('secretContent');
-    // Key based on miu_Digital Architect Persona
-    if (key === 'archmiu2026' || key === 'MIU_33') {
-        content.style.display = 'block';
-        startDossierTyping();
-    } else { alert('SYSTEM_ERROR: Unauthorized Access'); }
-}
-
-function startDossierTyping() {
-    const text = `IDENTITY_DOSSIER: ANAMY PADILLA\nEDUCATION: BSBA FINANCE | BS NURSING\nEXPERIENCE: RN RIYADH NODE (EXIT: 2026.02.02)\nSTATUS: FOUNDER @ MIU_DIGITAL ARCHITECT STUDIO\nOBJECTIVE: BRIDGE PHYSICAL & DIGITAL ECOSYSTEMS.`;
-    const target = document.getElementById('dossier-text');
-    target.innerHTML = "";
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            target.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
-            i++;
-            setTimeout(type, 35);
-        }
-    }
-    type();
-}
-// --- BOOT SEQUENCE ---
-window.addEventListener('load', () => {
-    const overlay = document.getElementById('boot-overlay');
-    setTimeout(() => {
-        overlay.style.opacity = '0';
-        setTimeout(() => { overlay.style.display = 'none'; }, 1000);
-    }, 2500);
-});
-
-// --- VAULT DECRYPTION ---
-function unlockVault() {
-    const key = document.getElementById('accessKey').value;
-    const content = document.getElementById('secretContent');
-    // Key based on miu_Digital Architect Persona
-    if (key === 'archmiu2026' || key === 'MIU_33') {
-        content.style.display = 'block';
-        startDossierTyping();
-    } else { alert('SYSTEM_ERROR: Unauthorized Access'); }
-}
-
-function startDossierTyping() {
-    const text = `IDENTITY_DOSSIER: ANAMY PADILLA\nEDUCATION: BSBA FINANCE | BS NURSING\nEXPERIENCE: RN RIYADH NODE (EXIT: 2026.02.02)\nSTATUS: FOUNDER @ MIU_DIGITAL ARCHITECT STUDIO\nOBJECTIVE: BRIDGE PHYSICAL & DIGITAL ECOSYSTEMS.`;
-    const target = document.getElementById('dossier-text');
-    target.innerHTML = "";
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            target.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
-            i++;
-            setTimeout(type, 35);
-        }
-    }
-    type();
-}
-// --- BOOT SEQUENCE ---
-window.addEventListener('load', () => {
-    const overlay = document.getElementById('boot-overlay');
-    setTimeout(() => {
-        overlay.style.opacity = '0';
-        setTimeout(() => { overlay.style.display = 'none'; }, 1000);
-    }, 2500);
-});
-
-// --- VAULT DECRYPTION ---
-function unlockVault() {
-    const key = document.getElementById('accessKey').value;
-    const content = document.getElementById('secretContent');
-    // Key based on miu_Digital Architect Persona
-    if (key === 'archmiu2026' || key === 'MIU_33') {
-        content.style.display = 'block';
-        startDossierTyping();
-    } else { alert('SYSTEM_ERROR: Unauthorized Access'); }
-}
-
-function startDossierTyping() {
-    const text = `IDENTITY_DOSSIER: ANAMY PADILLA\nEDUCATION: BSBA FINANCE | BS NURSING\nEXPERIENCE: RN RIYADH NODE (EXIT: 2026.02.02)\nSTATUS: FOUNDER @ MIU_DIGITAL ARCHITECT STUDIO\nOBJECTIVE: BRIDGE PHYSICAL & DIGITAL ECOSYSTEMS.`;
-    const target = document.getElementById('dossier-text');
-    target.innerHTML = "";
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            target.innerHTML += text.charAt(i) === '\n' ? '<br>' : text.charAt(i);
-            i++;
-            setTimeout(type, 35);
-        }
-    }
-    type();
-}
