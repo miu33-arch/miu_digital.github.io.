@@ -1,44 +1,82 @@
-:root { --accent: #BC13FE; --terminal: #00ff41; --bg-dark: #000; }
-body { background: var(--bg-dark); color: #e0e0e0; font-family: 'Courier New', monospace; margin: 0; display: flex; overflow-x: hidden; }
+// --- MIU_33 CONTACT GATEWAY PROTOCOL ---
+const BACKEND_URL = 'https://miu-backend.onrender.com/contact';
+const FORM_STORAGE_KEY = 'miu_contact_draft';
 
-/* SYSTEM BOOT */
-#boot-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 1s ease; }
-.boot-logo { color: var(--terminal); font-size: 3rem; text-shadow: 0 0 15px var(--terminal); }
-.progress-container { width: 300px; height: 2px; background: #111; margin: 20px auto; }
-.progress-bar { width: 0%; height: 100%; background: var(--terminal); animation: progress-fill 2s forwards; }
-@keyframes progress-fill { to { width: 100%; } }
-
-/* SIDEBAR & BRAND LOGO ALIGNMENT (CORRECTED) */
-.sidebar { 
-    width: 220px; 
-    height: 100vh; 
-    border-right: 1px solid var(--terminal); 
-    padding: 30px 15px; 
-    position: fixed; 
-    background: var(--bg-dark); 
-    z-index: 100; 
-    box-sizing: border-box; /* This ensures padding doesn't push the logo out */
-    display: flex;
-    flex-direction: column;
+// --- AUTO-SAVE LOGIC (Preserving Input) ---
+function saveDraft() {
+    const draft = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+    localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify(draft));
 }
 
-.brand-header { width: 100%; text-align: center; margin-bottom: 25px; }
-
-.sidebar-logo { 
-    width: 85%; 
-    max-width: 140px; 
-    height: auto; 
-    display: block; 
-    margin: 0 auto 15px auto; /* Centers the logo horizontally */
-    filter: drop-shadow(0 0 5px var(--terminal)); 
+function loadDraft() {
+    const saved = localStorage.getItem(FORM_STORAGE_KEY);
+    if (saved) {
+        const draft = JSON.parse(saved);
+        document.getElementById('name').value = draft.name || '';
+        document.getElementById('email').value = draft.email || '';
+        document.getElementById('message').value = draft.message || '';
+        console.log("> MIU_SYSTEM: Contact draft restored from local cache.");
+    }
 }
 
-.brand-id { font-size: 1.3rem; color: var(--terminal); margin: 0; text-shadow: 0 0 10px var(--terminal); }
-.translated-id { color: var(--accent); font-size: 0.95rem; margin-top: 5px; opacity: 0.9; }
+// --- SERVER STATUS PROTOCOL ---
+async function checkServerStatus() {
+    const statusEl = document.getElementById('backend-status');
+    try {
+        // Options check to see if the gateway is reachable
+        await fetch(BACKEND_URL, { method: 'OPTIONS' });
+        statusEl.innerHTML = `<span class="pulse" style="background: var(--terminal);"></span> GATEWAY: ACTIVE`;
+    } catch (err) { 
+        statusEl.innerHTML = `<span class="pulse" style="background: red;"></span> GATEWAY: OFFLINE`; 
+    }
+}
 
-/* CONTENT WRAPPER */
-.content-wrapper { margin-left: 220px; padding: 60px; max-width: 900px; width: 100%; box-sizing: border-box; }
-.terminal-box, .vault-interface { border: 1px solid var(--terminal); padding: 25px; margin-bottom: 40px; background: rgba(0, 255, 65, 0.02); }
-.btn-terminal { background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 8px 15px; cursor: pointer; }
+// --- INITIALIZATION ---
+window.addEventListener('load', () => {
+    checkServerStatus();
+    loadDraft();
+    
+    // Attach real-time listeners for the Auto-Save feature
+    const fields = ['name', 'email', 'message'];
+    fields.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.addEventListener('input', saveDraft);
+        }
+    });
+});
 
-@media (max-width: 850px) { .sidebar { width: 100%; height: auto; position: relative; border-right: none; } .content-wrapper { margin-left: 0; padding: 20px; } }
+// --- DATA TRANSMISSION PROTOCOL ---
+document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const status = document.getElementById('status');
+    status.textContent = '> INITIALIZING_TRANSMISSION...';
+
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+
+    try {
+        const res = await fetch(BACKEND_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        if (res.ok) {
+            status.textContent = '> DATA_TRANSMITTED_SUCCESSFULLY.';
+            localStorage.removeItem(FORM_STORAGE_KEY); // Wipe draft after success
+            document.getElementById('contact-form').reset();
+        } else {
+            status.textContent = '> ERROR: SERVER_REJECTED_PACKET.';
+        }
+    } catch (err) {
+        status.textContent = '> ERROR: CONNECTION_TIMEOUT. DRAFT_SAVED_LOCALLY.';
+    }
+});
