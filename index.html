@@ -9,6 +9,17 @@
 </head>
 <body oncontextmenu="return false;">
 
+    <div id="boot-overlay">
+        <div class="boot-content">
+            <h1 class="boot-logo">MIU_33</h1>
+            <div class="boot-status">
+                <p id="boot-text">> LOADING_RIYADH_NODE...</p>
+                <div class="progress-container"><div class="progress-bar"></div></div>
+            </div>
+            <div class="boot-id">缪联睿 | DIGITAL_ARCHITECT</div>
+        </div>
+    </div>
+
     <nav class="sidebar">
         <div class="status-indicator">
             <div><span class="pulse"></span> ONLINE_NODE: RIYADH</div>
@@ -17,8 +28,11 @@
             </div>
         </div>
         
-        <h2 class="brand-id">MIU_33</h2>
-        <div class="translated-id">缪联睿</div>
+        <div class="brand-container">
+            <img src="logo.png" alt="miu_Digital Architect Studio" class="sidebar-logo">
+            <h2 class="brand-id">MIU_33</h2>
+            <div class="translated-id">缪联睿</div>
+        </div>
 
         <div class="social-links">
             <a href="https://www.linkedin.com/in/miu-digital-architect/" target="_blank">LinkedIn</a>
@@ -62,7 +76,7 @@
             <div class="bio-content">
                 <p class="cmd-line">> [L_1]: WORKSPACE_LOG</p>
                 <h3>势 | Bridging Physical Space and Digital Vision</h3>
-                <p>We transform static spaces into dynamic, data-driven experiences.</p>
+                <p>We transform static spaces into dynamic, data-driven experiences powered by AI and spatial computing.</p>
                 <div class="studio-badge">MIU_Digital Architect Studio</div>
             </div>
         </section>
@@ -77,23 +91,23 @@
                     Digital Architecture Systems <button class="btn-terminal" onclick="playServiceAudio('Systems activated.', this)">[AUDIO_LOG]</button>
                 </li>
                 <li style="display:flex; justify-content:space-between; margin-bottom:10px;">
-                    Identity-Based Design <button class="btn-terminal" onclick="playServiceAudio('Identity mapping online.', this)">[AUDIO_LOG]</button>
+                    Identity-Based Experience Design <button class="btn-terminal" onclick="playServiceAudio('Identity mapping online.', this)">[AUDIO_LOG]</button>
                 </li>
                 <li style="display:flex; justify-content:space-between; margin-bottom:10px;">
-                    Security-Aware Systems <button class="btn-terminal" onclick="playServiceAudio('Security layers engaged.', this)">[AUDIO_LOG]</button>
-                </li>
-                <li style="display:flex; justify-content:space-between; margin-bottom:10px;">
-                    Computational Prototyping <button class="btn-terminal" onclick="playServiceAudio('Computational run.', this)">[AUDIO_LOG]</button>
+                    Security-Aware Architectural Systems <button class="btn-terminal" onclick="playServiceAudio('Security layers engaged.', this)">[AUDIO_LOG]</button>
                 </li>
             </ul>
         </section>
 
         <section id="projects-section" class="vault-interface">
             <p class="cmd-line">> [L_2B]: PROJECT_ARCHIVE</p>
-            <div class="project-item"><h4 onclick="toggleProject('p1')">[+] Adaptive Identity Pavilion</h4><div id="p1" style="display:none; padding:10px;">P1: Morphology Protocol Active.</div></div>
-            <div class="project-item"><h4 onclick="toggleProject('p2')">[+] Neural Urban Scanner</h4><div id="p2" style="display:none; padding:10px;">P2: City Intel Protocol Active.</div></div>
-            <div class="project-item"><h4 onclick="toggleProject('p3')">[+] Digital Twin for Cultural Spaces</h4><div id="p3" style="display:none; padding:10px;">P3: Simulacrum Protocol Active.</div></div>
-            <div class="project-item"><h4 onclick="toggleProject('p4')">[+] Sentient Interior System</h4><div id="p4" style="display:none; padding:10px;">P4: Habitat Autonomy Protocol Active.</div></div>
+            <div class="project-item">
+                <h4 onclick="toggleProject('p1')">[+] Adaptive Identity Pavilion</h4>
+                <div id="p1" style="display:none; padding:15px; border-left: 1px solid var(--accent);">
+                    <p style="color:var(--terminal); font-size:0.7rem;">PROTOCOL: BIOMORPHIC_ENVELOPE_v1.0</p>
+                    <p>Responsive skin utilizing biological structures to adapt to user identity patterns.</p>
+                </div>
+            </div>
         </section>
 
         <section id="contact-section" class="vault-interface">
@@ -117,17 +131,13 @@
             </div>
         </section>
 
+        <section class="vault-interface" style="border-color: rgba(0, 255, 65, 0.2);">
+            <p class="cmd-line" style="font-size:0.6rem;">> [协议]: PRIVACY_&_PEACE</p>
+            <p style="font-size:0.7rem; color:#666;">Minimal data intrusion node. Your solitude and peace being alone is respected.</p>
+        </section>
+
         <footer class="terminal-footer">
-            <div style="display:flex; justify-content:space-between; align-items:flex-end;">
-                <div>
-                    <p>© 2026 ANAMY PADILLA | 缪联睿</p>
-                    <p style="color:var(--terminal); font-size:0.7rem;">> STATUS: SYSTEM_ONLINE</p>
-                </div>
-                <div style="text-align:right;">
-                    <p>miu_Digital Architect Studio</p>
-                    <p style="font-size:0.6rem; color:#444;">RIYADH_NODE_v3.3</p>
-                </div>
-            </div>
+            <p>© 2026 ANAMY PADILLA | 缪联睿</p>
         </footer>
     </main>
 
