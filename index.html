@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIU_33 | Digital Architect Console</title>
+    
+    <meta name="description" content="miu_Digital Architect Studio: Bridging physical space and digital vision. Founded by Anamy Padilla.">
+    <meta name="keywords" content="miu_Digital Architect, 缪联睿, AI Architecture, Riyadh Node, Digital Twin China, Anamy Padilla">
+    <meta property="og:title" content="MIU_33 | Digital Architect Console">
+    <meta property="og:image" content="logo.png">
+
     <link rel="icon" type="image/jpeg" href="favicon.jpeg">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,33 +27,27 @@
     </div>
 
     <nav class="sidebar">
-        <div class="status-indicator">
-            <div><span class="pulse"></span> ONLINE_NODE: RIYADH</div>
-            <div id="backend-status" style="margin-top: 5px; opacity: 0.6; font-size: 0.6rem;">
-                <span class="pulse" style="background: orange;"></span> GATEWAY: INITIALIZING...
+        <div class="brand-header">
+            <img src="logo.png" alt="miu_Digital Architect Studio" class="sidebar-logo">
+            <div class="brand-text">
+                <h2 class="brand-id">MIU_33</h2>
+                <div class="translated-id">缪联睿</div>
             </div>
         </div>
+
+        <div class="status-indicator">
+            <div><span class="pulse"></span> ONLINE: RIYADH</div>
+        </div>
         
-        <div class="brand-container">
-            <img src="logo.png" alt="miu_Digital Architect Studio" class="sidebar-logo">
-            <h2 class="brand-id">MIU_33</h2>
-            <div class="translated-id">缪联睿</div>
-        </div>
-
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/miu-digital-architect/" target="_blank">LinkedIn</a>
-            <a href="https://www.facebook.com/share/18KYkL41JW/" target="_blank">Facebook</a>
-            <a href="https://www.xiaohongshu.com/user/profile/95449308409" target="_blank">Rednote</a>
-            <a href="https://www.tiktok.com/@miuproton" target="_blank">TikTok</a>
-        </div>
-
-        <div class="nav-links" style="margin-top: 30px;">
+        <div class="nav-links">
             <a href="#home-hero">> HOME</a>
             <a href="#about-section">> ABOUT</a>
-            <a href="#services-section">> SERVICES</a>
-            <a href="#projects-section">> PROJECTS</a>
-            <a href="#contact-section">> CONTACT</a>
             <a href="#v-0">> VAULT</a>
+        </div>
+        
+        <div class="social-links" style="margin-top:auto;">
+            <a href="https://www.xiaohongshu.com/user/profile/95449308409" target="_blank">Rednote</a>
+            <a href="https://www.linkedin.com/in/miu-digital-architect/" target="_blank">LinkedIn</a>
         </div>
     </nav>
 
@@ -57,83 +57,24 @@
                 <p class="type-line">> Booting MIU_STUDIO_v3.3...</p>
                 <p class="type-line">> Location: RIYADH_NODE_ACTIVE</p>
                 <p class="type-line">> Integrity check: PASSED</p>
-                <p class="type-line">> Welcome, 缪联睿.</p>
             </div>
             <img src="WhatsApp Image 2026-02-28 at 11.19.33 PM.jpeg" class="hero-img">
         </section>
 
-        <div class="control-bar" style="margin-bottom: 30px;">
-            <button onclick="readPhilosophy()" class="btn-terminal">[AUDIO_LOG]</button>
-            <button onclick="togglePrivacy()" class="btn-terminal p-b">[CLOAK: OFF]</button>
-        </div>
-
-        <section id="about-section" class="about-layout">
-            <div class="identity-panel">
-                <img src="Copilot_20260301_000046.png" class="identity-img">
-                <div class="identity-label">miu_Digital Architect Studio</div>
-                <button onclick="playAboutAudio()" class="btn-terminal id-audio-btn">[ABOUT_AUDIO]</button>
-            </div>
-            <div class="bio-content">
-                <p class="cmd-line">> [L_1]: WORKSPACE_LOG</p>
-                <h3>势 | Bridging Physical Space and Digital Vision</h3>
-                <p>We transform static spaces into dynamic, data-driven experiences powered by AI and spatial computing.</p>
-                <div class="studio-badge">MIU_Digital Architect Studio</div>
-            </div>
-        </section>
-
-        <section id="services-section" class="vault-interface">
-            <p class="cmd-line">> [L_1B]: SERVICE_PROTOCOLS</p>
-            <ul class="service-list" style="list-style:none; padding:0;">
-                <li style="display:flex; justify-content:space-between; margin-bottom:10px;">
-                    AI-Driven Spatial Design <button class="btn-terminal" onclick="playServiceAudio('AI protocol initiated.', this)">[AUDIO_LOG]</button>
-                </li>
-                <li style="display:flex; justify-content:space-between; margin-bottom:10px;">
-                    Digital Architecture Systems <button class="btn-terminal" onclick="playServiceAudio('Systems activated.', this)">[AUDIO_LOG]</button>
-                </li>
-                <li style="display:flex; justify-content:space-between; margin-bottom:10px;">
-                    Identity-Based Experience Design <button class="btn-terminal" onclick="playServiceAudio('Identity mapping online.', this)">[AUDIO_LOG]</button>
-                </li>
-                <li style="display:flex; justify-content:space-between; margin-bottom:10px;">
-                    Security-Aware Architectural Systems <button class="btn-terminal" onclick="playServiceAudio('Security layers engaged.', this)">[AUDIO_LOG]</button>
-                </li>
-            </ul>
-        </section>
-
-        <section id="projects-section" class="vault-interface">
-            <p class="cmd-line">> [L_2B]: PROJECT_ARCHIVE</p>
-            <div class="project-item">
-                <h4 onclick="toggleProject('p1')">[+] Adaptive Identity Pavilion</h4>
-                <div id="p1" style="display:none; padding:15px; border-left: 1px solid var(--accent);">
-                    <p style="color:var(--terminal); font-size:0.7rem;">PROTOCOL: BIOMORPHIC_ENVELOPE_v1.0</p>
-                    <p>Responsive skin utilizing biological structures to adapt to user identity patterns.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact-section" class="vault-interface">
-            <p class="cmd-line">> [L_3]: CONTACT_GATEWAY</p>
-            <form id="contact-form" style="display:flex; flex-direction:column; gap:10px; max-width:450px;">
-                <input type="text" id="name" placeholder="IDENT_NAME" required class="btn-terminal" style="text-align:left;">
-                <input type="email" id="email" placeholder="SECURE_EMAIL" required class="btn-terminal" style="text-align:left;">
-                <textarea id="message" placeholder="MESSAGE_DATA_PACKET" required class="btn-terminal" style="text-align:left; height:80px;"></textarea>
-                <button type="submit" class="btn-terminal">[TRANSMIT_DATA]</button>
-                <p id="status" style="font-size:0.75rem; color:var(--terminal); margin-top:10px;"></p>
-            </form>
+        <section class="vault-interface">
+            <p class="cmd-line" style="font-size:0.6rem;">> [协议]: PRIVACY_&_PEACE</p>
+            <p style="font-size:0.75rem; color:#888;">秉承追求独处与宁静的哲学，本节点运行遵循最小化数据侵入原则。</p>
+            <p style="font-size:0.7rem; color:#666;">In alignment with the philosophy of solitude and peace, your identity is respected.</p>
         </section>
 
         <section id="v-0" class="vault-interface">
             <p class="cmd-line">> [L_2]: ENCRYPTED_VAULT</p>
             <input type="password" id="accessKey" placeholder="Enter Access Key" class="btn-terminal">
             <button onclick="unlockVault()" class="btn-terminal">UNLOCK</button>
-            <div id="secretContent" style="display:none; margin-top:20px; border-top:1px dashed var(--terminal); padding-top:20px;">
+            <div id="secretContent" style="display:none; margin-top:20px;">
                 <p class="cmd-line">> [LOG_RECOVERY_COMPLETE]</p>
                 <div id="dossier-text" style="font-size:0.8rem; line-height:1.6; color:#aaa;"></div>
             </div>
-        </section>
-
-        <section class="vault-interface" style="border-color: rgba(0, 255, 65, 0.2);">
-            <p class="cmd-line" style="font-size:0.6rem;">> [协议]: PRIVACY_&_PEACE</p>
-            <p style="font-size:0.7rem; color:#666;">Minimal data intrusion node. Your solitude and peace being alone is respected.</p>
         </section>
 
         <footer class="terminal-footer">
@@ -142,6 +83,5 @@
     </main>
 
     <script src="vault.js"></script>
-    <script src="contact.js"></script>
 </body>
 </html>
