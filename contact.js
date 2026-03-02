@@ -1,30 +1,31 @@
 const BACKEND_URL = 'https://miu-backend.onrender.com/contact';
 
 document.getElementById('contact-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
+    e.preventDefault();
+    const status = document.getElementById('status');
+    status.textContent = '> INITIALIZING_TRANSMISSION...';
 
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  const status = document.getElementById('status');
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
 
-  status.textContent = 'Sending...';
+    try {
+        const res = await fetch(BACKEND_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
 
-  try {
-    const res = await fetch(BACKEND_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message })
-    });
-
-    const data = await res.json();
-
-    if (data.ok) {
-      status.textContent = 'Message sent!';
-    } else {
-      status.textContent = 'Failed to send message.';
+        if (res.ok) {
+            status.textContent = '> DATA_TRANSMITTED_SUCCESSFULLY.';
+            document.getElementById('contact-form').reset();
+        } else {
+            status.textContent = '> ERROR: SERVER_REJECTED_PACKET.';
+        }
+    } catch (err) {
+        status.textContent = '> ERROR: CONNECTION_TIMEOUT.';
     }
-  } catch (err) {
-    status.textContent = 'Error connecting to server.';
-  }
 });
+
