@@ -13,10 +13,10 @@ body { background: var(--bg-dark); color: #e0e0e0; font-family: 'Courier New', m
 @keyframes progress-fill { to { width: 100%; } }
 
 /* SIDEBAR FIX */
-.sidebar { 
-    width: 220px; height: 100vh; border-right: 1px solid var(--terminal); 
-    padding: 30px 15px; position: fixed; background: var(--bg-dark); 
-    box-sizing: border-box; display: flex; flex-direction: column; 
+.sidebar {
+    width: 220px; height: 100vh; border-right: 1px solid var(--terminal);
+    padding: 30px 15px; position: fixed; background: var(--bg-dark);
+    box-sizing: border-box; display: flex; flex-direction: column;
 }
 .sidebar-logo { width: 100%; max-width: 140px; height: auto; display: block; margin: 0 auto 10px auto; filter: drop-shadow(0 0 5px var(--terminal)); }
 
@@ -28,6 +28,7 @@ body { background: var(--bg-dark); color: #e0e0e0; font-family: 'Courier New', m
 .hero-img { width: 100%; max-width: 600px; border: 1px solid var(--terminal); margin-bottom: 20px; }
 .pulse { height: 8px; width: 8px; background-color: var(--terminal); border-radius: 50%; display: inline-block; animation: blink 1.5s infinite; }
 @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
 .hero-clarity {
     margin: 25px 0 40px 0;
     padding-left: 5px;
@@ -44,6 +45,7 @@ body { background: var(--bg-dark); color: #e0e0e0; font-family: 'Courier New', m
     font-size: 0.9rem;
     color: #9a9a9a;
 }
+
 .section-title {
     font-size: 1.2rem;
     font-weight: 500;
@@ -91,4 +93,52 @@ body { background: var(--bg-dark); color: #e0e0e0; font-family: 'Courier New', m
     border: 1px solid #222;
     border-radius: 4px;
     margin-top: 5px;
+}
+
+/* ---------------------------------------------------
+   ⭐ AI SPATIAL — SCROLLING IMAGE FEED
+--------------------------------------------------- */
+#ai-spatial {
+    padding: 40px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(0,255,65,0.25);
+    border-bottom: 1px solid rgba(0,255,65,0.25);
+    background: rgba(0,255,65,0.02);
+}
+
+/* container hides overflow for clean loop */
+.scroll-container {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* auto-scrolling strip */
+.scroll-auto {
+    display: inline-flex;
+    animation: autoScroll 25s linear infinite;
+}
+
+/* scrolling animation */
+@keyframes autoScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* images */
+.scroll-container img {
+    height: 260px;
+    margin-right: 20px;
+    border-radius: 6px;
+    border: 1px solid var(--terminal);
+    display: inline-block;
+    box-shadow: 0 0 12px rgba(0,255,65,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* hover glow */
+.scroll-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0,255,65,0.45);
 }
