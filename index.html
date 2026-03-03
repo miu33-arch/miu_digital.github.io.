@@ -4,12 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIU_33 | Digital Architect Console</title>
-    
-    <meta name="description" content="miu_Digital Architect Studio: Bridging physical space and digital vision. Founded by Anamy Padilla.">
-    <meta name="keywords" content="miu_Digital Architect, 缪联睿, AI Architecture, Riyadh Node, Digital Twin China, Anamy Padilla">
-    <link rel="canonical" href="https://miu33-arch.github.io/">
-
-    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+    <meta name="description" content="miu_Digital Architect Studio: Bridging physical space and digital vision.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body oncontextmenu="return false;">
@@ -28,49 +23,60 @@
     <nav class="sidebar">
         <div class="brand-header">
             <img src="logo.png" alt="miu_Digital Architect Studio" class="sidebar-logo">
-            <div class="brand-text">
-                <h2 class="brand-id">MIU_33</h2>
-                <div class="translated-id">缪联睿</div>
-            </div>
+            <h2 class="brand-id">MIU_33</h2>
+            <div class="translated-id">缪联睿</div>
         </div>
-
         <div class="status-indicator">
-            <div><span class="pulse"></span> ONLINE: RIYADH</div>
+            <p><span class="pulse"></span> ONLINE: RIYADH</p>
+            <p id="backend-status" style="font-size:0.6rem; opacity:0.6; margin-top:5px;">GATEWAY: READY</p>
         </div>
-        
         <div class="nav-links">
             <a href="#home-hero">> HOME</a>
-            <a href="#about-section">> ABOUT</a>
+            <a href="#services-section">> SERVICES</a>
+            <a href="#projects-section">> PROJECTS</a>
+            <a href="#contact-section">> CONTACT</a>
             <a href="#v-0">> VAULT</a>
-        </div>
-
-        <div class="social-links" style="margin-top:auto;">
-            <a href="https://www.xiaohongshu.com/user/profile/95449308409" target="_blank">Rednote</a>
-            <a href="https://www.linkedin.com/in/miu-digital-architect/" target="_blank">LinkedIn</a>
         </div>
     </nav>
 
     <main class="content-wrapper">
         <section id="home-hero">
             <div class="terminal-box">
-                <p class="type-line">> Booting MIU_STUDIO_v3.3...</p>
-                <p class="type-line">> Location: RIYADH_NODE_ACTIVE</p>
-                <p class="type-line">> Welcome, 缪联睿.</p>
+                <p>> Booting MIU_STUDIO_v3.3...</p>
+                <p>> Location: RIYADH_NODE_ACTIVE</p>
             </div>
+            
+            <div class="terminal-box audio-module">
+                <p class="cmd-line">> [AUDIO_LOGS]: ACTIVE</p>
+                <button id="play-log" class="btn-terminal">PLAY_LOG_01</button>
+                <audio id="miu-audio" src="ambient-transmission.mp3"></audio>
+            </div>
+            
             <img src="WhatsApp Image 2026-02-28 at 11.19.33 PM.jpeg" class="hero-img">
         </section>
 
-        <section class="vault-interface solitude-theme">
-            <p class="cmd-line" style="font-size:0.6rem;">> [协议]: PRIVACY_&_PEACE</p>
-            <p style="font-size:0.75rem; color:#888;">秉承追求独处与宁静的哲学，本节点运行遵循最小化数据侵入原则。</p>
-            <p style="font-size:0.7rem; color:#666;">In alignment with the philosophy of solitude and peace, your identity is respected.</p>
+        <section id="services-section" class="terminal-box">
+            <p class="cmd-line">> [L_1B]: SERVICE_PROTOCOLS</p>
+            <h3>服务 | Intelligent Systems</h3>
+            <p>AI-Driven Spatial Design | Digital Architecture Systems</p>
         </section>
 
-        <section id="v-0" class="vault-interface">
+        <section id="contact-section" class="terminal-box">
+            <p class="cmd-line">> [L_3]: CONTACT_GATEWAY</p>
+            <form id="contact-form">
+                <input type="text" id="name" placeholder="IDENT_NAME" required class="btn-terminal" style="width:100%; margin-bottom:10px;">
+                <input type="email" id="email" placeholder="SECURE_EMAIL" required class="btn-terminal" style="width:100%; margin-bottom:10px;">
+                <textarea id="message" placeholder="COMMUNICATION_CONTENT" required class="btn-terminal" style="width:100%; height:80px; margin-bottom:10px;"></textarea>
+                <button type="submit" class="btn-terminal">SEND_TO_PROTON_NODE</button>
+            </form>
+            <p id="status" style="font-size:0.7rem; margin-top:10px; color:var(--terminal);"></p>
+        </section>
+
+        <section id="v-0" class="terminal-box">
             <p class="cmd-line">> [L_2]: ENCRYPTED_VAULT</p>
             <input type="password" id="accessKey" placeholder="Access Key" class="btn-terminal">
             <button onclick="unlockVault()" class="btn-terminal">UNLOCK</button>
-            <div id="secretContent" style="display:none; margin-top:20px; border-top: 1px dashed var(--terminal); padding-top: 20px;">
+            <div id="secretContent" style="display:none; margin-top:15px;">
                 <div id="dossier-text" style="font-size:0.8rem; line-height:1.6; color:#aaa;"></div>
             </div>
         </section>
@@ -81,5 +87,6 @@
     </main>
 
     <script src="vault.js"></script>
+    <script src="contact.js"></script>
 </body>
 </html>
