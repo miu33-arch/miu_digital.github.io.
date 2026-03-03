@@ -1,4 +1,4 @@
-// --- BOOT SEQUENCE ---
+// BOOT SEQUENCE
 window.addEventListener('load', () => {
     const overlay = document.getElementById('boot-overlay');
     setTimeout(() => {
@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
     }, 2500);
 });
 
-// --- AUDIO LOGS ---
+// AUDIO LOGS
 const audio = document.getElementById('miu-audio');
 const playBtn = document.getElementById('play-log');
 if (playBtn) {
@@ -17,7 +17,13 @@ if (playBtn) {
     });
 }
 
-// --- VAULT DECRYPTION ---
+// TRANSCRIPT TOGGLE
+function toggleTranscript() {
+    const t = document.getElementById('audio-transcript');
+    t.style.display = (t.style.display === 'none') ? 'block' : 'none';
+}
+
+// VAULT DECRYPTION
 function unlockVault() {
     const key = document.getElementById('accessKey').value;
     if (key === 'archmiu2026' || key === 'MIU_33') {
