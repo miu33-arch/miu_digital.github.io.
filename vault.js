@@ -1,4 +1,4 @@
-// PART 1: BOOT SEQUENCE (RIYADH_NODE)
+// 1. BOOT SEQUENCE (RIYADH_NODE)
 window.addEventListener('load', () => {
     const overlay = document.getElementById('boot-overlay');
     setTimeout(() => {
@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
     }, 2500);
 });
 
-// PART 2: AUDIO LOG & TRANSCRIPT CONTROLS
+// 2. AUDIO LOG & TRANSCRIPT CONTROLS
 const audio = document.getElementById('miu-audio');
 const playBtn = document.getElementById('play-log');
 if (playBtn) {
@@ -21,13 +21,12 @@ if (playBtn) {
         }
     });
 }
-
 function toggleTranscript() {
     const t = document.getElementById('audio-transcript');
     t.style.display = (t.style.display === 'none') ? 'block' : 'none';
 }
 
-// PART 3: ENCRYPTED VAULT (PREMIUM BADGE REVEAL)
+// 3. ENCRYPTED VAULT (PREMIUM BADGE REVEAL)
 function unlockVault() {
     const keyInput = document.getElementById('accessKey');
     const key = keyInput.value.trim().toLowerCase();
@@ -52,7 +51,7 @@ function unlockVault() {
     }
 }
 
-// PART 4: TYPING ANIMATION ENGINE
+// 4. TYPING ANIMATION ENGINE
 function startDossierTyping(content) {
     const target = document.getElementById('dossier-text');
     let i = 0;
