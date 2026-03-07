@@ -3,9 +3,7 @@ const BACKEND_URL = 'https://formspree.io/f/xoqzzpoy';
 document.getElementById('contact-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const status = document.getElementById('status');
-    
-    // Status update for Riyadh Studio branding
-    status.textContent = '> INITIALIZING_SECURE_TRANSMISSION_TO_RIYADH_NODE...';
+    status.textContent = '> INITIALIZING_SECURE_TRANSFER_TO_PROTON_NODE...';
 
     const payload = {
         name: document.getElementById('name').value,
@@ -16,20 +14,17 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
     try {
         const response = await fetch(BACKEND_URL, {
             method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json' 
-            },
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
         });
 
         if (response.ok) {
-            status.textContent = '> SUCCESS: ENCRYPTED_DATA_SENT_TO_STUDIO_ARCHIVE.';
+            status.textContent = '> SUCCESS: ENCRYPTED_DATA_SENT_TO_RIYADH_STUDIO.';
             document.getElementById('contact-form').reset();
         } else {
-            status.textContent = '> ERROR: PROTOCOL_FAILURE_CHECK_CONNECTION.';
+            status.textContent = '> ERROR: TRANSFER_FAILED_RETRY_LATER.';
         }
     } catch (err) { 
-        status.textContent = '> ERROR: CONNECTION_TIMEOUT_NODE_OFFLINE.';
+        status.textContent = '> ERROR: CONNECTION_TIMEOUT_NODE_OFFLINE.'; 
     }
 });
