@@ -1,4 +1,3 @@
-/* 1. CORE THEME CONFIG */
 :root {
     --terminal: #00ff41;
     --accent: #BC13FE;
@@ -14,7 +13,6 @@ body {
     overflow-x: hidden;
 }
 
-/* 2. BOOT OVERLAY (RIYADH_NODE) */
 #boot-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -27,122 +25,33 @@ body {
     transition: opacity 1s ease;
 }
 
-.boot-logo {
-    color: var(--terminal);
-    font-size: 3rem;
-    text-shadow: 0 0 15px var(--terminal);
-    margin-bottom: 20px;
-}
-
-.progress-container {
-    width: 300px;
-    height: 2px;
-    background: #222;
-    border: 1px solid #333;
-}
-
-.progress-bar {
-    width: 0%;
-    height: 100%;
-    background: var(--terminal);
-    animation: progress-fill 2s forwards;
-}
-
+.boot-logo { color: var(--terminal); font-size: 3rem; text-shadow: 0 0 15px var(--terminal); margin-bottom: 20px; }
+.progress-container { width: 300px; height: 2px; background: #222; border: 1px solid #333; }
+.progress-bar { width: 0%; height: 100%; background: var(--terminal); animation: progress-fill 2s forwards; }
 @keyframes progress-fill { to { width: 100%; } }
 
-/* 3. SIDEBAR & NAVIGATION */
 .sidebar {
-    width: 220px;
-    height: 100vh;
-    border-right: 1px solid var(--terminal);
-    padding: 30px 15px;
-    position: fixed;
-    background: var(--bg-dark);
-    box-sizing: border-box;
-    z-index: 100;
+    width: 220px; height: 100vh; border-right: 1px solid var(--terminal);
+    padding: 30px 15px; position: fixed; background: var(--bg-dark); box-sizing: border-box; z-index: 100;
 }
 
-.content-wrapper {
-    margin-left: 220px;
-    padding: 60px;
-    width: 100%;
-    max-width: 900px;
-    box-sizing: border-box;
-}
+.content-wrapper { margin-left: 220px; padding: 60px; width: 100%; max-width: 900px; box-sizing: border-box; }
+.terminal-box { border: 1px solid var(--terminal); padding: 25px; margin-bottom: 40px; background: rgba(0, 255, 65, 0.02); }
 
-/* 4. TERMINAL COMPONENTS */
-.terminal-box {
-    border: 1px solid var(--terminal);
-    padding: 25px;
-    margin-bottom: 40px;
-    background: rgba(0, 255, 65, 0.02);
-}
-
-.cmd-line {
-    color: var(--terminal) !important;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
-    opacity: 1 !important; /* Forces visibility for the Owner section */
-}
+.cmd-line { color: var(--terminal) !important; font-weight: bold; display: block; margin-bottom: 10px; opacity: 1 !important; }
 
 .btn-terminal {
-    background: transparent;
-    border: 1px solid var(--terminal);
-    color: var(--terminal);
-    padding: 8px 15px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-family: 'Courier New', monospace;
+    background: transparent; border: 1px solid var(--terminal); color: var(--terminal);
+    padding: 8px 15px; cursor: pointer; transition: 0.3s; font-family: 'Courier New', monospace;
 }
+.btn-terminal:hover { background: var(--terminal); color: #000; box-shadow: 0 0 15px var(--terminal); }
 
-.btn-terminal:hover {
-    background: var(--terminal);
-    color: #000;
-    box-shadow: 0 0 15px var(--terminal);
-}
+.hero-img { width: 100%; border: 1px solid var(--terminal); margin-top: 20px; }
+.video-container { width: 100%; margin: 15px 0; border: 1px solid var(--terminal); background: #000; }
 
-/* 5. ASSETS & AI SPATIAL GALLERY */
-.hero-img {
-    width: 100%;
-    max-width: 800px;
-    border: 1px solid var(--terminal);
-    margin-top: 20px;
-}
+.scroll-auto { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; }
+.scroll-auto img { height: 200px; border: 1px solid var(--terminal); }
 
-.video-container {
-    width: 100%;
-    margin: 15px 0;
-    border: 1px solid var(--terminal);
-    background: #000;
-}
-
-/* Fix: Ensures the AI images under AI Spatial actually display */
-.scroll-container {
-    overflow: hidden;
-    padding: 20px 0;
-}
-
-.scroll-auto {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-}
-
-.scroll-auto img {
-    height: 200px;
-    border: 1px solid var(--terminal);
-    border-radius: 4px;
-    transition: 0.3s;
-}
-
-.scroll-auto img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--terminal);
-}
-
-/* 6. RESPONSIVE MOBILE FIX */
 @media (max-width: 768px) {
     body { flex-direction: column; }
     .sidebar { position: relative; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--terminal); }
