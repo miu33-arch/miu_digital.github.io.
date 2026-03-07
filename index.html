@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIU_33 | Digital Architect Console</title>
-    
-    <meta name="description" content="miu_Digital Architect Studio: Bridging physical space and digital vision in Riyadh.">
-    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body oncontextmenu="return false;">
@@ -14,13 +11,28 @@
     <div id="boot-overlay">
         <div class="boot-content">
             <h1 class="boot-logo">MIU_33</h1>
-            <div class="boot-status">
-                <p id="boot-text">> LOADING_RIYADH_NODE...</p>
-                <div class="progress-container"><div class="progress-bar"></div></div>
-            </div>
-            <div class="boot-id">缪联睿 | DIGITAL_ARCHITECT</div>
+            <div id="boot-text">> LOADING_RIYADH_NODE...</div>
+            <div class="progress-container"><div class="progress-bar"></div></div>
         </div>
     </div>
+
+    <nav class="sidebar">
+        <div class="brand-header">
+            <img src="logo.png" alt="miu_Digital Architect Studio" class="sidebar-logo">
+            <div class="brand-text">
+                <h2 class="brand-id">MIU_33</h2>
+                <div class="translated-id">缪联睿</div>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#home-hero">> HOME</a>
+            <a href="#services-section">> SERVICES</a>
+            <a href="#shop-node">> SHOP</a>
+            <a href="#projects-section">> PROJECTS</a>
+            <a href="#ai-spatial">> AI SPATIAL</a>
+            <a href="#v-0">> VAULT</a>
+        </div>
+    </nav>
 
     <main class="content-wrapper">
         <section id="home-hero">
@@ -29,50 +41,37 @@
                 <p>> Location: RIYADH_NODE_ACTIVE</p>
                 
                 <div class="audio-module" style="margin-top: 15px; border-top: 1px solid var(--terminal); padding-top: 10px;">
-                    <p class="cmd-line">> [AUDIO_LOGS]: ACTIVE</p>
-                    <audio id="miu-audio" src="audio/log_01.mp3"></audio>
+                    <p class="cmd-line">> [AUDIO_LOGS]: AI_SPATIAL_SYNC_ACTIVE</p>
+                    <audio id="miu-audio" src="audio/ai_spatial.mp3"></audio>
                     <button id="play-log" class="btn-terminal">PLAY_LOG_01</button>
                     <button onclick="toggleTranscript()" class="btn-terminal">VIEW_TRANSCRIPT</button>
                     <div id="audio-transcript" style="display:none; margin-top:10px; font-size:0.7rem; color:#888;">
-                        > LOG_01: Evolution from Riyadh RN to Digital Architect. Exit: 2026.02.02.
+                        > LOG_01: Identity: 缪联睿. Transition: Digital Architect Riyadh.
                     </div>
                 </div>
             </div>
-
             <div class="hero-clarity">
                 <h1 class="hero-title">Architectural design for physical and digital spaces.</h1>
                 <img src="images/hero-studio.jpg" class="hero-img">
             </div>
         </section>
 
-        <section id="services-section" class="terminal-box">
-            <p class="cmd-line">> [L_1B]: SERVICE_PROTOCOLS</p>
-            <h3 class="section-title">Services</h3>
-            <div class="service-list">
-                <p><span class="service-tag">AI‑Driven Spatial Design</span> — Concept generation and adaptive spatial logic.</p>
-                <p><span class="service-tag">Architectural Concept Design</span> — Early‑stage form and space development.</p>
-            </div>
-            <p class="cmd-line" style="margin-top: 20px; opacity: 0.8;">
-                > [COMMERCIAL_SIGNAL]: DIGITAL_ASSETS_AVAILABLE_FOR_LICENSING
-            </p>
-        </section>
-
         <section id="shop-node" class="terminal-box">
             <p class="cmd-line">> [L_2B_COMMERCE]: ASSET_STORE_LIVE</p>
             <h3 class="section-title">Digital Assets</h3>
-            <div class="video-container">
-                <video autoplay loop muted playsinline class="video-asset">
+            <div class="video-container" style="width: 100%; border: 1px solid var(--terminal); background: #000; margin: 15px 0;">
+                <video autoplay loop muted playsinline style="width: 100%; display: block;">
                     <source src="videos/shop-preview.mp4" type="video/mp4">
                 </video>
             </div>
-            <a href="https://buymeacoffee.com/miu_studio3" class="btn-terminal shop-btn" target="_blank">ACCESS_ASSET_PACK_01</a>
+            <a href="https://buymeacoffee.com/miu_studio3" class="btn-terminal shop-btn" target="_blank" style="text-decoration:none;">ACCESS_ASSET_PACK_01</a>
         </section>
 
         <section id="projects-section" class="terminal-box">
             <p class="cmd-line">> [L_2B]: PROJECT_ARCHIVE</p>
             <h3 class="section-title">Project Archive</h3>
-            <div class="video-container">
-                <video autoplay loop muted playsinline class="video-asset">
+            <div class="video-container" style="width: 100%; border: 1px solid var(--terminal); background: #000; margin: 15px 0;">
+                <video autoplay loop muted playsinline style="width: 100%; display: block;">
                     <source src="videos/project-riyadh.mp4" type="video/mp4">
                 </video>
             </div>
@@ -96,13 +95,12 @@
             <p class="cmd-line">> [L_2]: ENCRYPTED_VAULT</p>
             <input type="password" id="accessKey" placeholder="Access Key" class="btn-terminal">
             <button onclick="unlockVault()" class="btn-terminal">UNLOCK</button>
-            <div id="secretContent" style="display:none; margin-top:20px;">
-                <div id="dossier-text"></div>
-            </div>
+            <div id="secretContent" style="display:none; margin-top:20px;"><div id="dossier-text"></div></div>
         </section>
 
-        <footer class="terminal-footer" style="text-align:center; padding:20px;">
-            <p>© 2026 ANAMY PADILLA | 缪联睿</p>
+        <footer class="terminal-footer" style="text-align:center; padding:40px 20px; border-top: 1px solid var(--terminal); margin-top: 40px;">
+            <p style="font-size: 0.8rem; color: var(--terminal); margin: 0;">© 2026 ANAMY PADILLA | 缪联睿</p>
+            <p style="font-size: 0.6rem; opacity: 0.5; margin: 5px 0;">RIYADH_NODE // DIGITAL_ARCHITECT_STUDIO</p>
         </footer>
     </main>
 
