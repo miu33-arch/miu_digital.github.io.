@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIU_33 | Digital Architect Console</title>
     
-    <meta name="description" content="miu_Digital Architect Studio: Bridging physical space and digital vision in Riyadh. Founded by Anamy Padilla.">
-    <meta name="keywords" content="miu_Digital Architect, 缪联睿, AI Architecture, Riyadh Node, Digital Twin, Anamy Padilla, Architectural Prompt Pack">
+    <meta name="description" content="miu_Digital Architect Studio: Bridging physical space and digital vision in Riyadh.">
     <link rel="icon" type="image/jpeg" href="favicon.jpeg">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -23,43 +22,27 @@
         </div>
     </div>
 
-    <nav class="sidebar">
-        <div class="brand-header">
-            <img src="logo.png" alt="miu_Digital Architect Studio" class="sidebar-logo">
-            <div class="brand-text">
-                <h2 class="brand-id">MIU_33</h2>
-                <div class="translated-id">缪联睿</div>
-            </div>
-        </div>
-        <div class="status-indicator">
-            <div><span class="pulse"></span> ONLINE: RIYADH</div>
-            <div id="backend-status" style="font-size:0.6rem; opacity:0.6; margin-top:5px;">GATEWAY: ACTIVE</div>
-        </div>
-        <div class="nav-links">
-            <a href="#home-hero">> HOME</a>
-            <a href="#services-section">> SERVICES</a>
-            <a href="#shop-node">> SHOP</a>
-            <a href="#projects-section">> PROJECTS</a>
-            <a href="#ai-spatial">> AI SPATIAL</a>
-            <a href="#v-0">> VAULT</a>
-        </div>
-        <div class="social-links" style="margin-top:auto;">
-            <a href="https://www.xiaohongshu.com/user/profile/95449308409" target="_blank" style="font-size:0.7rem;">Rednote</a>
-        </div>
-    </nav>
-
     <main class="content-wrapper">
         <section id="home-hero">
             <div class="terminal-box">
-                <p class="type-line">> Booting MIU_STUDIO_v3.3...</p>
-                <p class="type-line">> Location: RIYADH_NODE_ACTIVE</p>
-                <p class="type-line">> Welcome, 缪联睿.</p>
+                <p>> Booting MIU_STUDIO_v3.3...</p>
+                <p>> Location: RIYADH_NODE_ACTIVE</p>
+                
+                <div class="audio-module" style="margin-top: 15px; border-top: 1px solid var(--terminal); padding-top: 10px;">
+                    <p class="cmd-line">> [AUDIO_LOGS]: ACTIVE</p>
+                    <audio id="miu-audio" src="audio/log_01.mp3"></audio>
+                    <button id="play-log" class="btn-terminal">PLAY_LOG_01</button>
+                    <button onclick="toggleTranscript()" class="btn-terminal">VIEW_TRANSCRIPT</button>
+                    <div id="audio-transcript" style="display:none; margin-top:10px; font-size:0.7rem; color:#888;">
+                        > LOG_01: Evolution from Riyadh RN to Digital Architect. Exit: 2026.02.02.
+                    </div>
+                </div>
             </div>
+
             <div class="hero-clarity">
                 <h1 class="hero-title">Architectural design for physical and digital spaces.</h1>
-                <p class="hero-sub">Blending architectural craft with advanced digital workflows.</p>
+                <img src="images/hero-studio.jpg" class="hero-img">
             </div>
-            <img src="images/hero-studio.jpg" class="hero-img" alt="miu_Digital Architect Studio Console">
         </section>
 
         <section id="services-section" class="terminal-box">
@@ -67,8 +50,7 @@
             <h3 class="section-title">Services</h3>
             <div class="service-list">
                 <p><span class="service-tag">AI‑Driven Spatial Design</span> — Concept generation and adaptive spatial logic.</p>
-                <p><span class="service-tag">Architectural Concept Design</span> — Early‑stage form, space, and narrative development.</p>
-                <p><span class="service-tag">Digital Architecture Systems</span> — Parametric workflows and computational design.</p>
+                <p><span class="service-tag">Architectural Concept Design</span> — Early‑stage form and space development.</p>
             </div>
             <p class="cmd-line" style="margin-top: 20px; opacity: 0.8;">
                 > [COMMERCIAL_SIGNAL]: DIGITAL_ASSETS_AVAILABLE_FOR_LICENSING
@@ -78,32 +60,23 @@
         <section id="shop-node" class="terminal-box">
             <p class="cmd-line">> [L_2B_COMMERCE]: ASSET_STORE_LIVE</p>
             <h3 class="section-title">Digital Assets</h3>
-            <div class="shop-preview-container">
-                <video autoplay loop muted playsinline class="shop-video">
+            <div class="video-container">
+                <video autoplay loop muted playsinline class="video-asset">
                     <source src="videos/shop-preview.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="project-entry">
-                <p class="project-title">[+] AI Architecture Prompt Pack: Futuristic Riyadh</p>
-                <p class="project-protocol">Protocol: MIDJOURNEY_v6_RIYADH_NODE</p>
-                <a href="https://buymeacoffee.com/miu_studio3" class="btn-terminal shop-btn" target="_blank" style="text-decoration:none;">ACCESS_ASSET_PACK_01</a>
-                <span class="buy-note">> Instant digital delivery upon purchase.</span>
-            </div>
+            <a href="https://buymeacoffee.com/miu_studio3" class="btn-terminal shop-btn" target="_blank">ACCESS_ASSET_PACK_01</a>
         </section>
 
         <section id="projects-section" class="terminal-box">
             <p class="cmd-line">> [L_2B]: PROJECT_ARCHIVE</p>
             <h3 class="section-title">Project Archive</h3>
-            <div class="project-entry">
-                <p class="project-title">[+] Project: Riyadh Design</p>
-                <p class="project-protocol">Protocol: WIREFRAME_MORPHOLOGY_v2.0</p>
-                <div class="shop-preview-container">
-                    <video autoplay loop muted playsinline class="shop-video">
-                        <source src="videos/project-riyadh.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <p class="project-desc">A 1500m vertical urbanism concept optimized for structural performance and environmental logic.</p>
+            <div class="video-container">
+                <video autoplay loop muted playsinline class="video-asset">
+                    <source src="videos/project-riyadh.mp4" type="video/mp4">
+                </video>
             </div>
+            <p class="project-desc">A 1500m vertical urbanism concept optimized for structural performance.</p>
         </section>
 
         <section id="ai-spatial" class="terminal-box">
@@ -111,10 +84,10 @@
             <h3 class="section-title">AI Spatial</h3>
             <div class="scroll-container">
                 <div class="scroll-auto">
-                    <img src="images/ai1.jpeg" alt=""><img src="images/ai2.jpeg" alt=""><img src="images/ai3.jpeg" alt="">
-                    <img src="images/ai4.jpeg" alt=""><img src="images/ai5.jpeg" alt=""><img src="images/ai6.jpeg" alt="">
-                    <img src="images/ai1.jpeg" alt=""><img src="images/ai2.jpeg" alt=""><img src="images/ai3.jpeg" alt="">
-                    <img src="images/ai4.jpeg" alt=""><img src="images/ai5.jpeg" alt=""><img src="images/ai6.jpeg" alt="">
+                    <img src="images/ai1.jpeg"><img src="images/ai2.jpeg"><img src="images/ai3.jpeg">
+                    <img src="images/ai4.jpeg"><img src="images/ai5.jpeg"><img src="images/ai6.jpeg">
+                    <img src="images/ai1.jpeg"><img src="images/ai2.jpeg"><img src="images/ai3.jpeg">
+                    <img src="images/ai4.jpeg"><img src="images/ai5.jpeg"><img src="images/ai6.jpeg">
                 </div>
             </div>
         </section>
@@ -127,10 +100,6 @@
                 <div id="dossier-text"></div>
             </div>
         </section>
-
-        <div style="display:none; visibility:hidden;">
-            Digital Architect Riyadh Anamy Padilla 缪联睿 AI Architecture Studio Futuristic Riyadh conceptual design.
-        </div>
 
         <footer class="terminal-footer" style="text-align:center; padding:20px;">
             <p>© 2026 ANAMY PADILLA | 缪联睿</p>
