@@ -6,15 +6,7 @@ window.addEventListener('load', () => {
     }, 2500);
 });
 
-const audio = document.getElementById('miu-audio');
-const playBtn = document.getElementById('play-log');
-if (playBtn) {
-    playBtn.addEventListener('click', () => {
-        if (audio.paused) { audio.play(); playBtn.innerText = "PAUSE_LOG"; }
-        else { audio.pause(); playBtn.innerText = "PLAY_LOG_01"; }
-    });
-}
-
+// Vault Logic (Fixed badge path)
 function unlockVault() {
     const key = document.getElementById('accessKey').value;
     const secretContent = document.getElementById('secretContent');
@@ -24,11 +16,10 @@ function unlockVault() {
         document.body.style.textShadow = "0 0 15px #BC13FE";
         document.documentElement.style.setProperty('--terminal', '#BC13FE');
         secretContent.style.display = 'block';
-        // LINKING YOUR PREMIUM BADGE FILE
-        target.innerHTML = `<img src="images/premium-badge.jpg" style="width:200px; border:1px solid #BC13FE; margin-bottom:15px; box-shadow: 0 0 20px #BC13FE;"><br>`;
-        startDossierTyping(`[PROTOCOL]: PREMIUM_ASSET_LICENSE_v1.0\nRECIPIENT: VERIFIED_MEMBER\nSTATUS: ACCESS_GRANTED`);
-    } 
-    else if (key === 'archmiu2026' || key === 'MIU_33') {
+        // Path changed to look in ROOT folder
+        target.innerHTML = `<img src="premium-badge.jpg" style="width:200px; border:1px solid #BC13FE; margin-bottom:15px;"><br>`;
+        startDossierTyping(`[PROTOCOL]: PREMIUM_ASSET_LICENSE_v1.0\nSTATUS: ACCESS_GRANTED`);
+    } else if (key === 'archmiu2026' || key === 'MIU_33') {
         secretContent.style.display = 'block';
         startDossierTyping(`IDENTITY_DOSSIER: ANAMY PADILLA\nSTATUS: FOUNDER @ MIU_DIGITAL ARCHITECT STUDIO`);
     }
@@ -45,3 +36,4 @@ function startDossierTyping(content) {
         }
     }
     type();
+}
