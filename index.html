@@ -115,27 +115,24 @@
             </div>
         </section>
 
-        <section id="contact-node" class="terminal-box">
-            <h3 class="section-title">Contact Studio</h3>
-            <form id="contact-form">
-                <input type="text" id="name" placeholder="IDENT_NAME" class="btn-terminal" required style="width:100%; margin-bottom:10px; background: transparent;">
-                <input type="email" id="email" placeholder="EMAIL_ADDRESS" class="btn-terminal" required style="width:100%; margin-bottom:10px; background: transparent;">
-                <textarea id="message" placeholder="MESSAGE_DATA" class="btn-terminal" required style="width:100%; height:80px; margin-bottom:10px; background: transparent;"></textarea>
-                <button type="submit" class="btn-terminal">SEND_ENCRYPTED_PACKET</button>
-            </form>
-            <p id="status" class="cmd-line" style="margin-top: 10px; font-size: 0.8rem;"></p>
-        </section>
+<section id="contact-node" class="terminal-box">
+    <h3 class="section-title">Contact Studio</h3>
+    <p class="cmd-line" style="font-size: 0.7rem; opacity: 0.7;">> OWNER: ANAMY PADILLA [MIÙ LIÁN RUÌ]</p>
+    
+    <form id="contact-form">
+        <input type="text" id="name" placeholder="IDENT_NAME" class="btn-terminal" required style="width:100%; margin-bottom:10px; background: transparent;">
+        <input type="email" id="email" placeholder="EMAIL_ADDRESS" class="btn-terminal" required style="width:100%; margin-bottom:10px; background: transparent;">
+        <textarea id="message" placeholder="MESSAGE_DATA" class="btn-terminal" required style="width:100%; height:80px; margin-bottom:10px; background: transparent;"></textarea>
+        <button type="submit" class="btn-terminal">SEND_ENCRYPTED_PACKET</button>
+    </form>
+    <p id="status" class="cmd-line" style="margin-top: 10px; font-size: 0.8rem;"></p>
+</section>
 
-        <section id="v-0" class="terminal-box">
-            <p class="cmd-line">> [L_2]: ENCRYPTED_VAULT</p>
-            <input type="password" id="accessKey" placeholder="Access Key" class="btn-terminal">
-            <button type="button" onclick="unlockVault()" class="btn-terminal">UNLOCK</button>
-            <div id="secretContent" style="display:none; margin-top:20px;"><div id="dossier-text"></div></div>
-        </section>
+<footer class="terminal-footer" style="text-align:center; padding:40px 20px; border-top:1px solid var(--terminal); margin-top:40px;">
+    <p style="font-size:0.8rem; color:var(--terminal);">© 2026 ANAMY PADILLA | 缪联睿</p>
+    <p style="font-size:0.6rem; opacity:0.5;">RIYADH_NODE // DIGITAL_ARCHITECT_STUDIO</p>
+</footer>
 
-        <footer class="terminal-footer" style="text-align:center; padding:40px 20px; border-top:1px solid var(--terminal); margin-top:40px;">
-            <p style="font-size:0.8rem; color:var(--terminal);">© 2026 ANAMY PADILLA | 缪联睿</p>
-        </footer>
     </main>
 
     <script src="vault.js"></script>
