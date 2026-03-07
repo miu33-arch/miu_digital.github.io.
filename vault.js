@@ -34,12 +34,12 @@ function unlockVault() {
     const target = document.getElementById('dossier-text');
 
     if (key === 'unlocked premium') {
-        // Neon Purple Shift
+        // Trigger Purple Riyadh Theme
         document.body.style.textShadow = "0 0 15px #BC13FE";
         document.documentElement.style.setProperty('--terminal', '#BC13FE');
         secretContent.style.display = 'block';
         
-        // Show the Badge from your Main GitHub folder
+        // Show Badge (Matches Root Path)
         target.innerHTML = `<img src="premium-badge.jpg" style="width:220px; border:2px solid #BC13FE; margin-bottom:15px; box-shadow: 0 0 20px #BC13FE;"><br>`;
         
         startDossierTyping(`[PROTOCOL]: PREMIUM_MEMBER_ACTIVATED\nSTATUS: ACCESS_GRANTED\nNODE: RIYADH_CORE\nWELCOME, MIÙ LIÁN RUÌ.`);
